@@ -1,0 +1,49 @@
+openapi: '3.0.0'
+info:
+  title: 'UPM DPSM HRIS'
+  version: '1.0.0'
+  description: >-
+    Human Resource Information System for the University of the Philippines Manila Department of Physical Sciences and Mathematics.
+
+paths:
+  "/api/health":
+    get:
+      tags:
+      - Monitor Health
+
+      operationId: monitorHealth
+      summary: Get health status of app
+      description: Get health status of app
+      responses:
+        default:
+          description: Health check response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Server is up!"
+
+definitions:
+
+  ErrorResponse:
+    type: object
+    properties:
+      success:
+        type: boolean
+        example: false
+      message:
+        type: string
+        example: "Error message"
+              
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
