@@ -1,16 +1,15 @@
 openapi: '3.0.0'
 info:
-  title: 'UPM DPSM HRIS'
+  title: 'MITRE ATT&CK'
   version: '1.0.0'
   description: >-
-    Human Resource Information System for the University of the Philippines Manila Department of Physical Sciences and Mathematics.
+    API documentation for MITRE ATT&CK matrix using Node.js.
 
 paths:
   "/api/health":
     get:
       tags:
       - Monitor Health
-
       operationId: monitorHealth
       summary: Get health status of app
       description: Get health status of app
@@ -29,17 +28,303 @@ paths:
                     type: string
                     example: "Server is up!"
 
+  "/api/populate/tactic":
+    post:
+      tags:
+      - Populate
+      operationId: populateTactic
+      summary: Insert data in matrix_tactic table
+      description: Data for populating table found in data.json file
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                "tactics": 
+                  type: object
+                  example: [
+                    {
+                      "ID": "TA0009",
+                      "name": "Collection",
+                      "description": "The adversary is trying to gather data of interest to their goal.\n\nCollection consists of techniques adversaries may use to gather information and the sources information is collected from that are relevant to following through on the adversary's objectives. Frequently, the next goal after collecting data is to steal (exfiltrate) the data. Common target sources include various drive types, browsers, audio, video, and email. Common collection methods include capturing screenshots and keyboard input.",
+                      "url": "https://attack.mitre.org/tactics/TA0009",
+                      "created": "17 October 2018",
+                      "last modified": "19 July 2019"
+                    },
+                    {
+                      "ID": "TA0011",
+                      "name": "Command And Control",
+                      "description": "The adversary is trying to communicate with compromised systems to control them.\n\nCommand and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. There are many ways an adversary can establish command and control with various levels of stealth depending on the victim’s network structure and defenses.",
+                      "url": "https://attack.mitre.org/tactics/TA0011",
+                      "created": "17 October 2018",
+                      "last modified": "19 July 2019"
+                    }
+                  ]
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  result:
+                    type: object
+                    example: [
+                        {
+                          tactic_id: "TA0009",
+                          tactic_name: "Collection",
+                          tactic_description: "The adversary is trying to gather data of interest to their goal.\n\nCollection consists of techniques adversaries may use to gather information and the sources information is collected from that are relevant to following through on the adversary's objectives. Frequently, the next goal after collecting data is to steal (exfiltrate) the data. Common target sources include various drive types, browsers, audio, video, and email. Common collection methods include capturing screenshots and keyboard input.",
+                          tactic_url: "https://attack.mitre.org/tactics/TA0009"
+                        },
+                        {
+                          tactic_id: "TA0011",
+                          tactic_name: "Command And Control",
+                          tactic_description: "The adversary is trying to communicate with compromised systems to control them.\n\nCommand and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. There are many ways an adversary can establish command and control with various levels of stealth depending on the victim’s network structure and defenses.",
+                          tactic_url: "https://attack.mitre.org/tactics/TA0011"
+                        }
+                      ]
+
+  "/api/populate/technique":
+    post:
+      tags:
+      - Populate
+      operationId: populateTechnique
+      summary: Insert data in techniques/subtechniques related tables
+      description: Data for populating tables found in data.json file
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                "techniques": 
+                  type: object
+                  example: [
+                    {
+                      "ID": "T1548",
+                      "name": "Abuse Elevation Control Mechanism",
+                      "description": "Adversaries may circumvent mechanisms designed to control elevate privileges to gain higher-level permissions. Most modern systems contain native elevation control mechanisms that are intended to limit privileges that a user can perform on a machine. Authorization has to be granted to specific users in order to perform tasks that can be considered of higher risk. An adversary can perform several methods to take advantage of built-in control mechanisms in order to escalate privileges on a system.",
+                      "url": "https://attack.mitre.org/techniques/T1548",
+                      "created": "30 January 2020",
+                      "last modified": "22 July 2020",
+                      "version": "1.0",
+                      "tactics": "Defense Evasion, Privilege Escalation",
+                      "detection": "Monitor the file system for files that have the setuid or setgid bits set. Also look for any process API calls for behavior that may be indicative of [Process Injection](https://attack.mitre.org/techniques/T1055) and unusual loaded DLLs through [DLL Search Order Hijacking](https://attack.mitre.org/techniques/T1574/001), which indicate attempts to gain access to higher privileged processes. On Linux, auditd can alert every time a user's actual ID and effective ID are different (this is what happens when you sudo).\n\nConsider monitoring for <code>/usr/libexec/security_authtrampoline</code> executions which may indicate that AuthorizationExecuteWithPrivileges is being executed. MacOS system logs may also indicate when AuthorizationExecuteWithPrivileges is being called. Monitoring OS API callbacks for the execution can also be a way to detect this behavior but requires specialized security tooling.\n\nOn Linux, auditd can alert every time a user's actual ID and effective ID are different (this is what happens when you sudo). This technique is abusing normal functionality in macOS and Linux systems, but sudo has the ability to log all input and output based on the <code>LOG_INPUT</code> and <code>LOG_OUTPUT</code> directives in the <code>/etc/sudoers</code> file.\n\nThere are many ways to perform UAC bypasses when a user is in the local administrator group on a system, so it may be difficult to target detection on all variations. Efforts should likely be placed on mitigation and collecting enough information on process launches and actions that could be performed before and after a UAC bypass is performed. Some UAC bypass methods rely on modifying specific, user-accessible Registry settings. Analysts should monitor Registry settings for unauthorized changes.",
+                      "platforms": "Linux, Windows, macOS",
+                      "data sources": "Command: Command Execution, File: File Metadata, File: File Modification, Process: OS API Execution, Process: Process Creation, Process: Process Metadata, Windows Registry: Windows Registry Key Modification",
+                      "is sub-technique": "FALSE",
+                      "permissions required": "Administrator, User"
+                    },
+                    {
+                      "ID": "T1548.002",
+                      "name": "Abuse Elevation Control Mechanism: Bypass User Account Control",
+                      "description": "Adversaries may bypass UAC mechanisms to elevate process privileges on system. Windows User Account Control (UAC) allows a program to elevate its privileges (tracked as integrity levels ranging from low to high) to perform a task under administrator-level permissions, possibly by prompting the user for confirmation. The impact to the user ranges from denying the operation under high enforcement to allowing the user to perform the action if they are in the local administrators group and click through the prompt or allowing them to enter an administrator password to complete the action. (Citation: TechNet How UAC Works)\n\nIf the UAC protection level of a computer is set to anything but the highest level, certain Windows programs can elevate privileges or execute some elevated [Component Object Model](https://attack.mitre.org/techniques/T1559/001) objects without prompting the user through the UAC notification box. (Citation: TechNet Inside UAC) (Citation: MSDN COM Elevation) An example of this is use of [Rundll32](https://attack.mitre.org/techniques/T1218/011) to load a specifically crafted DLL which loads an auto-elevated [Component Object Model](https://attack.mitre.org/techniques/T1559/001) object and performs a file operation in a protected directory which would typically require elevated access. Malicious software may also be injected into a trusted process to gain elevated privileges without prompting a user.(Citation: Davidson Windows)\n\nMany methods have been discovered to bypass UAC. The Github readme page for UACME contains an extensive list of methods(Citation: Github UACMe) that have been discovered and implemented, but may not be a comprehensive list of bypasses. Additional bypass methods are regularly discovered and some used in the wild, such as:\n\n* <code>eventvwr.exe</code> can auto-elevate and execute a specified binary or script.(Citation: enigma0x3 Fileless UAC Bypass)(Citation: Fortinet Fareit)\n\nAnother bypass is possible through some lateral movement techniques if credentials for an account with administrator privileges are known, since UAC is a single system security mechanism, and the privilege or integrity of a process running on one system will be unknown on remote systems and default to high integrity.(Citation: SANS UAC Bypass)",
+                      "url": "https://attack.mitre.org/techniques/T1548/002",
+                      "created": "30 January 2020",
+                      "last modified": "22 July 2020",
+                      "version": "2.0",
+                      "tactics": "Defense Evasion, Privilege Escalation",
+                      "detection": "There are many ways to perform UAC bypasses when a user is in the local administrator group on a system, so it may be difficult to target detection on all variations. Efforts should likely be placed on mitigation and collecting enough information on process launches and actions that could be performed before and after a UAC bypass is performed. Monitor process API calls for behavior that may be indicative of [Process Injection](https://attack.mitre.org/techniques/T1055) and unusual loaded DLLs through [DLL Search Order Hijacking](https://attack.mitre.org/techniques/T1574/001), which indicate attempts to gain access to higher privileged processes.\n\nSome UAC bypass methods rely on modifying specific, user-accessible Registry settings. For example:\n\n* The <code>eventvwr.exe</code> bypass uses the <code>[HKEY_CURRENT_USER]\\Software\\Classes\\mscfile\\shell\\open\\command</code> Registry key.(Citation: enigma0x3 Fileless UAC Bypass)\n\n* The <code>sdclt.exe</code> bypass uses the <code>[HKEY_CURRENT_USER]\\Software\\Microsoft\\Windows\\CurrentVersion\\App Paths\\control.exe</code> and <code>[HKEY_CURRENT_USER]\\Software\\Classes\\exefile\\shell\\runas\\command\\isolatedCommand</code> Registry keys.(Citation: enigma0x3 sdclt app paths)(Citation: enigma0x3 sdclt bypass)\n\nAnalysts should monitor these Registry settings for unauthorized changes.",
+                      "platforms": "Windows",
+                      "data sources": "Command: Command Execution, Process: Process Creation, Process: Process Metadata, Windows Registry: Windows Registry Key Modification",
+                      "is sub-technique": "TRUE",
+                      "sub-technique of": "T1548",
+                      "contributors": "Casey Smith; Stefan Kanthak",
+                      "permissions required": "Administrator, User",
+                      "defenses bypassed": "Windows User Account Control"
+                    }
+                  ]
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  result:
+                    type: object
+                    example: [
+                        {
+                          "tacticList": [
+                            "Defense Evasion",
+                            "Privilege Escalation"
+                          ],
+                          "platformList": [
+                            "Linux",
+                            "Windows",
+                            "macOS"
+                          ],
+                          "dataSources": null
+                        },
+                        {
+                          "tacticList": [
+                            "Defense Evasion",
+                            "Privilege Escalation"
+                          ],
+                          "platformList": [
+                            "Windows"
+                          ],
+                          "dataSources": null
+                        }
+                      ]
+
+  "/api/populate/query":
+    post:
+      tags:
+      - Populate
+      operationId: populateQuery
+      summary: Update data in techniques/subtechniques table for query-related columns
+      description: Data for populating table found in query.json file
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                "2933": 
+                  type: object
+                  example: {
+                    "name": "T1587: Resource Development",
+                    "subtechniques": [
+                      {
+                        "TechniqueID": "T1588: Obtain Capabilities",
+                        "OperatingSystem": "Windows",
+                        "Description": "Indicated vulnerable solarwinds installation. ",
+                        "Query": "SELECT path, directory, filename, inode, uid, gid, mode, size, atime, mtime, ctime, btime, hard_links, symlink, type, attributes, product_version FROM file WHERE ( file.pathLIKE\"C:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"D:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"E:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"F:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"G:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"H:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"I:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"J:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"K:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"L:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"M:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"N:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"O:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"P:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Q:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"R:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"S:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"T:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"U:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"V:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"W:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"X:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Y:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Z:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\") AND ( file.product_versionIN( \"2020.2.5300.12432\", \"2020.2.5200.12394\", \"2020.4.100.478\", \"2020.2.100.11831\", \"2020.2.100.12219\", \"2019.4.5200.9083\") );rocess",
+                        "Frequency": "24 Hours"
+                      }
+                    ]
+                  }
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  result:
+                    type: object
+                    example: [
+                        {
+                          query_title: "T1588: Obtain Capabilities",
+                          query_description: "Indicated vulnerable solarwinds installation. ",
+                          query_text: "SELECT path, directory, filename, inode, uid, gid, mode, size, atime, mtime, ctime, btime, hard_links, symlink, type, attributes, product_version FROM file WHERE ( file.pathLIKE\"C:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"D:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"E:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"F:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"G:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"H:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"I:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"J:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"K:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"L:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"M:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"N:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"O:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"P:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Q:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"R:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"S:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"T:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"U:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"V:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"W:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"X:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Y:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Z:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\") AND ( file.product_versionIN( \"2020.2.5300.12432\", \"2020.2.5200.12394\", \"2020.4.100.478\", \"2020.2.100.11831\", \"2020.2.100.12219\", \"2019.4.5200.9083\") );rocess",
+                          query_frequency: "24 Hours"
+                        }
+                      ]
+
+  "/api/populate/count":
+    post:
+      tags:
+      - Populate
+      operationId: populateCount
+      summary: Populate data in matrix_count table
+      description: Data for populating table found in count.json file
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                "TA0043": 
+                  type: object
+                  example: {
+                    "techniques": {
+                      "T1595.002": {
+                        "name": "Vulnerability Scanning",
+                        "url": "https://attack.mitre.org/techniques/T1595/002",
+                        "count": 3
+                      },
+                      "T1592": {
+                        "name": "Gather Victim Host Information",
+                        "url": "https://attack.mitre.org/techniques/T1592",
+                        "count": 1
+                      },
+                      "T1592.001": {
+                        "name": "Hardware",
+                        "url": "https://attack.mitre.org/techniques/T1592/001",
+                        "count": 2
+                      }
+                    },
+                    "name": "Reconnaissance",
+                    "url": "https://attack.mitre.org/tactics/TA0043",
+                    "platform": [
+                      "windows",
+                      "all",
+                      "unix"
+                    ]
+                  }
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  result:
+                    type: object
+                    example: [
+                        {
+                          "tactic": "TA0043",
+                          "technique": "T1595.002",
+                          "count": 3
+                        },
+                        {
+                          "tactic": "TA0043",
+                          "technique": "T1592",
+                          "count": 1
+                        },
+                        {
+                          "tactic": "TA0043",
+                          "technique": "T1592.001",
+                          "count": 2
+                        }
+                      ]
+
 definitions:
 
-  ErrorResponse:
-    type: object
-    properties:
-      success:
-        type: boolean
-        example: false
-      message:
-        type: string
-        example: "Error message"
+ErrorResponse:
+  type: object
+  properties:
+    success:
+      type: boolean
+      example: false
+    message:
+      type: string
+      example: "Error message"
               
 components:
   securitySchemes:

@@ -1,7 +1,7 @@
 {
   "name": "mtr-mitre-node",
   "version": "1.0.0",
-  "description": "Creation of MITRE ATT&CK matrix using Node.js.",
+  "description": "API for MITRE ATT&CK matrix using Node.js.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

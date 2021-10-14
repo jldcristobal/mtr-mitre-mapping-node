@@ -1,0 +1,1612 @@
+{
+  "TA0003": {
+    "techniques": {
+      "T1543.001": {
+        "name": "Launch Agent",
+        "url": "https://attack.mitre.org/techniques/T1543/001",
+        "count": 1
+      },
+      "T1133": {
+        "name": "External Remote Services",
+        "url": "https://attack.mitre.org/techniques/T1133",
+        "count": 27
+      },
+      "T1078.002": {
+        "name": "Domain Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/002",
+        "count": 7
+      },
+      "T1078.003": {
+        "name": "Local Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/003",
+        "count": 11
+      },
+      "T1543.003": {
+        "name": "Windows Service",
+        "url": "https://attack.mitre.org/techniques/T1543/003",
+        "count": 11
+      },
+      "T1547.001": {
+        "name": "Registry Run Keys / Startup Folder",
+        "url": "https://attack.mitre.org/techniques/T1547/001",
+        "count": 11
+      },
+      "T1547.012": {
+        "name": "Print Processors",
+        "url": "https://attack.mitre.org/techniques/T1547/012",
+        "count": 3
+      },
+      "T1136.001": {
+        "name": "Local Account",
+        "url": "https://attack.mitre.org/techniques/T1136/001",
+        "count": 3
+      },
+      "T1098": {
+        "name": "Account Manipulation",
+        "url": "https://attack.mitre.org/techniques/T1098",
+        "count": 8
+      },
+      "T1547.005": {
+        "name": "Security Support Provider",
+        "url": "https://attack.mitre.org/techniques/T1547/005",
+        "count": 2
+      },
+      "T1053.005": {
+        "name": "Scheduled Task",
+        "url": "https://attack.mitre.org/techniques/T1053/005",
+        "count": 3
+      },
+      "T1546.007": {
+        "name": "Netsh Helper DLL",
+        "url": "https://attack.mitre.org/techniques/T1546/007",
+        "count": 2
+      },
+      "T1547.010": {
+        "name": "Port Monitors",
+        "url": "https://attack.mitre.org/techniques/T1547/010",
+        "count": 2
+      },
+      "T1546.012": {
+        "name": "Image File Execution Options Injection",
+        "url": "https://attack.mitre.org/techniques/T1546/012",
+        "count": 3
+      },
+      "T1505.003": {
+        "name": "Web Shell",
+        "url": "https://attack.mitre.org/techniques/T1505/003",
+        "count": 3
+      },
+      "T1547.004": {
+        "name": "Winlogon Helper DLL",
+        "url": "https://attack.mitre.org/techniques/T1547/004",
+        "count": 2
+      },
+      "T1574": {
+        "name": "Hijack Execution Flow",
+        "url": "https://attack.mitre.org/techniques/T1574",
+        "count": 2
+      },
+      "T1574.001": {
+        "name": "DLL Search Order Hijacking",
+        "url": "https://attack.mitre.org/techniques/T1574/001",
+        "count": 1
+      },
+      "T1136": {
+        "name": "Create Account",
+        "url": "https://attack.mitre.org/techniques/T1136",
+        "count": 1
+      },
+      "T1546": {
+        "name": "Event Triggered Execution",
+        "url": "https://attack.mitre.org/techniques/T1546",
+        "count": 2
+      },
+      "T1546.011": {
+        "name": "Application Shimming",
+        "url": "https://attack.mitre.org/techniques/T1546/011",
+        "count": 1
+      },
+      "T1547.014": {
+        "name": "Active Setup",
+        "url": "https://attack.mitre.org/techniques/T1547/014",
+        "count": 1
+      },
+      "T1108": {
+        "name": "Redundant Access",
+        "url": "https://attack.mitre.org/techniques/T1108",
+        "count": 1
+      },
+      "T1547.006": {
+        "name": "Kernel Modules and Extensions",
+        "url": "https://attack.mitre.org/techniques/T1547/006",
+        "count": 2
+      },
+      "T1053.003": {
+        "name": "Cron",
+        "url": "https://attack.mitre.org/techniques/T1053/003",
+        "count": 3
+      },
+      "T1556.002": {
+        "name": "Password Filter DLL",
+        "url": "https://attack.mitre.org/techniques/T1556/002",
+        "count": 1
+      },
+      "T1037.004": {
+        "name": "RC Scripts",
+        "url": "https://attack.mitre.org/techniques/T1037/004",
+        "count": 3
+      },
+      "T1547.002": {
+        "name": "Authentication Package",
+        "url": "https://attack.mitre.org/techniques/T1547/002",
+        "count": 1
+      },
+      "T1197": {
+        "name": "BITS Jobs",
+        "url": "https://attack.mitre.org/techniques/T1197",
+        "count": 2
+      },
+      "T1547.009": {
+        "name": "Shortcut Modification",
+        "url": "https://attack.mitre.org/techniques/T1547/009",
+        "count": 2
+      },
+      "T1137": {
+        "name": "Office Application Startup",
+        "url": "https://attack.mitre.org/techniques/T1137",
+        "count": 1
+      },
+      "T1546.003": {
+        "name": "Windows Management Instrumentation Event Subscription",
+        "url": "https://attack.mitre.org/techniques/T1546/003",
+        "count": 1
+      },
+      "T1547": {
+        "name": "Boot or Logon Autostart Execution",
+        "url": "https://attack.mitre.org/techniques/T1547",
+        "count": 3
+      },
+      "T1543": {
+        "name": "Create or Modify System Process",
+        "url": "https://attack.mitre.org/techniques/T1543",
+        "count": 2
+      },
+      "T1098.004": {
+        "name": "SSH Authorized Keys",
+        "url": "https://attack.mitre.org/techniques/T1098/004",
+        "count": 1
+      },
+      "T1547.007": {
+        "name": "Re-opened Applications",
+        "url": "https://attack.mitre.org/techniques/T1547/007",
+        "count": 1
+      },
+      "T1574.006": {
+        "name": "LD_PRELOAD",
+        "url": "https://attack.mitre.org/techniques/T1574/006",
+        "count": 1
+      },
+      "T1078.001": {
+        "name": "Default Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/001",
+        "count": 1
+      },
+      "T1543.002": {
+        "name": "Systemd Service",
+        "url": "https://attack.mitre.org/techniques/T1543/002",
+        "count": 1
+      },
+      "T1547.003": {
+        "name": "Time Providers",
+        "url": "https://attack.mitre.org/techniques/T1547/003",
+        "count": 1
+      },
+      "T1053": {
+        "name": "Scheduled Task/Job",
+        "url": "https://attack.mitre.org/techniques/T1053",
+        "count": 1
+      },
+      "T1546.002": {
+        "name": "Screensaver",
+        "url": "https://attack.mitre.org/techniques/T1546/002",
+        "count": 1
+      }
+    },
+    "name": "Persistence",
+    "url": "https://attack.mitre.org/tactics/TA0003",
+    "platform": [
+      "darwin",
+      "unix",
+      "windows",
+      "linux",
+      "all"
+    ]
+  },
+  "TA0007": {
+    "techniques": {
+      "T1087.002": {
+        "name": "Domain Account",
+        "url": "https://attack.mitre.org/techniques/T1087/002",
+        "count": 4
+      },
+      "T1018": {
+        "name": "Remote System Discovery",
+        "url": "https://attack.mitre.org/techniques/T1018",
+        "count": 13
+      },
+      "T1033": {
+        "name": "System Owner/User Discovery",
+        "url": "https://attack.mitre.org/techniques/T1033",
+        "count": 8
+      },
+      "T1083": {
+        "name": "File and Directory Discovery",
+        "url": "https://attack.mitre.org/techniques/T1083",
+        "count": 10
+      },
+      "T1040": {
+        "name": "Network Sniffing",
+        "url": "https://attack.mitre.org/techniques/T1040",
+        "count": 13
+      },
+      "T1482": {
+        "name": "Domain Trust Discovery",
+        "url": "https://attack.mitre.org/techniques/T1482",
+        "count": 7
+      },
+      "T1069.002": {
+        "name": "Domain Groups",
+        "url": "https://attack.mitre.org/techniques/T1069/002",
+        "count": 5
+      },
+      "T1016": {
+        "name": "System Network Configuration Discovery",
+        "url": "https://attack.mitre.org/techniques/T1016",
+        "count": 18
+      },
+      "T1046": {
+        "name": "Network Service Scanning",
+        "url": "https://attack.mitre.org/techniques/T1046",
+        "count": 12
+      },
+      "T1082": {
+        "name": "System Information Discovery",
+        "url": "https://attack.mitre.org/techniques/T1082",
+        "count": 16
+      },
+      "T1049": {
+        "name": "System Network Connections Discovery",
+        "url": "https://attack.mitre.org/techniques/T1049",
+        "count": 8
+      },
+      "T1201": {
+        "name": "Password Policy Discovery",
+        "url": "https://attack.mitre.org/techniques/T1201",
+        "count": 4
+      },
+      "T1087.003": {
+        "name": "Email Account",
+        "url": "https://attack.mitre.org/techniques/T1087/003",
+        "count": 2
+      },
+      "T1087": {
+        "name": "Account Discovery",
+        "url": "https://attack.mitre.org/techniques/T1087",
+        "count": 9
+      },
+      "T1518.001": {
+        "name": "Security Software Discovery",
+        "url": "https://attack.mitre.org/techniques/T1518/001",
+        "count": 2
+      },
+      "T1087.001": {
+        "name": "Local Account",
+        "url": "https://attack.mitre.org/techniques/T1087/001",
+        "count": 4
+      },
+      "T1007": {
+        "name": "System Service Discovery",
+        "url": "https://attack.mitre.org/techniques/T1007",
+        "count": 3
+      },
+      "T1057": {
+        "name": "Process Discovery",
+        "url": "https://attack.mitre.org/techniques/T1057",
+        "count": 3
+      },
+      "T1069": {
+        "name": "Permission Groups Discovery",
+        "url": "https://attack.mitre.org/techniques/T1069",
+        "count": 4
+      },
+      "T1069.001": {
+        "name": "Local Groups",
+        "url": "https://attack.mitre.org/techniques/T1069/001",
+        "count": 2
+      },
+      "T1120": {
+        "name": "Peripheral Device Discovery",
+        "url": "https://attack.mitre.org/techniques/T1120",
+        "count": 2
+      }
+    },
+    "name": "Discovery",
+    "url": "https://attack.mitre.org/tactics/TA0007",
+    "platform": [
+      "windows",
+      "all",
+      "unix",
+      "linux",
+      "darwin"
+    ]
+  },
+  "TA0005": {
+    "techniques": {
+      "T1027": {
+        "name": "Obfuscated Files or Information",
+        "url": "https://attack.mitre.org/techniques/T1027",
+        "count": 13
+      },
+      "T1078.002": {
+        "name": "Domain Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/002",
+        "count": 7
+      },
+      "T1078.003": {
+        "name": "Local Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/003",
+        "count": 11
+      },
+      "T1036": {
+        "name": "Masquerading",
+        "url": "https://attack.mitre.org/techniques/T1036",
+        "count": 17
+      },
+      "T1036.003": {
+        "name": "Rename System Utilities",
+        "url": "https://attack.mitre.org/techniques/T1036/003",
+        "count": 4
+      },
+      "T1550.002": {
+        "name": "Pass the Hash",
+        "url": "https://attack.mitre.org/techniques/T1550/002",
+        "count": 6
+      },
+      "T1127": {
+        "name": "Trusted Developer Utilities Proxy Execution",
+        "url": "https://attack.mitre.org/techniques/T1127",
+        "count": 1
+      },
+      "T1055": {
+        "name": "Process Injection",
+        "url": "https://attack.mitre.org/techniques/T1055",
+        "count": 10
+      },
+      "T1055.001": {
+        "name": "Dynamic-link Library Injection",
+        "url": "https://attack.mitre.org/techniques/T1055/001",
+        "count": 2
+      },
+      "T1140": {
+        "name": "Deobfuscate/Decode Files or Information",
+        "url": "https://attack.mitre.org/techniques/T1140",
+        "count": 13
+      },
+      "T1070.004": {
+        "name": "File Deletion",
+        "url": "https://attack.mitre.org/techniques/T1070/004",
+        "count": 5
+      },
+      "T1055.002": {
+        "name": "Portable Executable Injection",
+        "url": "https://attack.mitre.org/techniques/T1055/002",
+        "count": 3
+      },
+      "T1055.012": {
+        "name": "Process Hollowing",
+        "url": "https://attack.mitre.org/techniques/T1055/012",
+        "count": 3
+      },
+      "T1070": {
+        "name": "Indicator Removal on Host",
+        "url": "https://attack.mitre.org/techniques/T1070",
+        "count": 4
+      },
+      "T1562.001": {
+        "name": "Disable or Modify Tools",
+        "url": "https://attack.mitre.org/techniques/T1562/001",
+        "count": 22
+      },
+      "T1216": {
+        "name": "Signed Script Proxy Execution",
+        "url": "https://attack.mitre.org/techniques/T1216",
+        "count": 2
+      },
+      "T1562.003": {
+        "name": "Impair Command History Logging",
+        "url": "https://attack.mitre.org/techniques/T1562/003",
+        "count": 5
+      },
+      "T1218.011": {
+        "name": "Rundll32",
+        "url": "https://attack.mitre.org/techniques/T1218/011",
+        "count": 7
+      },
+      "T1112": {
+        "name": "Modify Registry",
+        "url": "https://attack.mitre.org/techniques/T1112",
+        "count": 9
+      },
+      "T1134": {
+        "name": "Access Token Manipulation",
+        "url": "https://attack.mitre.org/techniques/T1134",
+        "count": 2
+      },
+      "T1562.002": {
+        "name": "Disable Windows Event Logging",
+        "url": "https://attack.mitre.org/techniques/T1562/002",
+        "count": 4
+      },
+      "T1027.001": {
+        "name": "Binary Padding",
+        "url": "https://attack.mitre.org/techniques/T1027/001",
+        "count": 2
+      },
+      "T1036.004": {
+        "name": "Masquerade Task or Service",
+        "url": "https://attack.mitre.org/techniques/T1036/004",
+        "count": 2
+      },
+      "T1218.005": {
+        "name": "Mshta",
+        "url": "https://attack.mitre.org/techniques/T1218/005",
+        "count": 6
+      },
+      "T1564": {
+        "name": "Hide Artifacts",
+        "url": "https://attack.mitre.org/techniques/T1564",
+        "count": 4
+      },
+      "T1218.007": {
+        "name": "Msiexec",
+        "url": "https://attack.mitre.org/techniques/T1218/007",
+        "count": 2
+      },
+      "T1574": {
+        "name": "Hijack Execution Flow",
+        "url": "https://attack.mitre.org/techniques/T1574",
+        "count": 1
+      },
+      "T1574.001": {
+        "name": "DLL Search Order Hijacking",
+        "url": "https://attack.mitre.org/techniques/T1574/001",
+        "count": 1
+      },
+      "T1218.010": {
+        "name": "Regsvr32",
+        "url": "https://attack.mitre.org/techniques/T1218/010",
+        "count": 3
+      },
+      "T1218": {
+        "name": "Signed Binary Proxy Execution",
+        "url": "https://attack.mitre.org/techniques/T1218",
+        "count": 7
+      },
+      "T1218.004": {
+        "name": "InstallUtil",
+        "url": "https://attack.mitre.org/techniques/T1218/004",
+        "count": 2
+      },
+      "T1564.002": {
+        "name": "Hidden Users",
+        "url": "https://attack.mitre.org/techniques/T1564/002",
+        "count": 2
+      },
+      "T1564.001": {
+        "name": "Hidden Files and Directories",
+        "url": "https://attack.mitre.org/techniques/T1564/001",
+        "count": 2
+      },
+      "T1548.001": {
+        "name": "Setuid and Setgid",
+        "url": "https://attack.mitre.org/techniques/T1548/001",
+        "count": 1
+      },
+      "T1108": {
+        "name": "Redundant Access",
+        "url": "https://attack.mitre.org/techniques/T1108",
+        "count": 1
+      },
+      "T1127.001": {
+        "name": "MSBuild",
+        "url": "https://attack.mitre.org/techniques/T1127/001",
+        "count": 2
+      },
+      "T1055.004": {
+        "name": "Asynchronous Procedure Call",
+        "url": "https://attack.mitre.org/techniques/T1055/004",
+        "count": 1
+      },
+      "T1562": {
+        "name": "Impair Defenses",
+        "url": "https://attack.mitre.org/techniques/T1562",
+        "count": 3
+      },
+      "T1548.003": {
+        "name": "Sudo and Sudo Caching",
+        "url": "https://attack.mitre.org/techniques/T1548/003",
+        "count": 2
+      },
+      "T1556.002": {
+        "name": "Password Filter DLL",
+        "url": "https://attack.mitre.org/techniques/T1556/002",
+        "count": 2
+      },
+      "T1548.004": {
+        "name": "Elevated Execution with Prompt",
+        "url": "https://attack.mitre.org/techniques/T1548/004",
+        "count": 2
+      },
+      "T1036.006": {
+        "name": "Space after Filename",
+        "url": "https://attack.mitre.org/techniques/T1036/006",
+        "count": 1
+      },
+      "T1134.001": {
+        "name": "Token Impersonation/Theft",
+        "url": "https://attack.mitre.org/techniques/T1134/001",
+        "count": 1
+      },
+      "T1197": {
+        "name": "BITS Jobs",
+        "url": "https://attack.mitre.org/techniques/T1197",
+        "count": 2
+      },
+      "T1222.002": {
+        "name": "Linux and Mac File and Directory Permissions Modification",
+        "url": "https://attack.mitre.org/techniques/T1222/002",
+        "count": 4
+      },
+      "T1562.004": {
+        "name": "Disable or Modify System Firewall",
+        "url": "https://attack.mitre.org/techniques/T1562/004",
+        "count": 3
+      },
+      "T1218.009": {
+        "name": "Regsvcs/Regasm",
+        "url": "https://attack.mitre.org/techniques/T1218/009",
+        "count": 2
+      },
+      "T1207": {
+        "name": "Rogue Domain Controller",
+        "url": "https://attack.mitre.org/techniques/T1207",
+        "count": 4
+      },
+      "T1550.003": {
+        "name": "Pass the Ticket",
+        "url": "https://attack.mitre.org/techniques/T1550/003",
+        "count": 5
+      },
+      "T1070.001": {
+        "name": "Clear Windows Event Logs",
+        "url": "https://attack.mitre.org/techniques/T1070/001",
+        "count": 1
+      },
+      "T1218.003": {
+        "name": "CMSTP",
+        "url": "https://attack.mitre.org/techniques/T1218/003",
+        "count": 2
+      },
+      "T1548.002": {
+        "name": "Bypass User Account Control",
+        "url": "https://attack.mitre.org/techniques/T1548/002",
+        "count": 1
+      },
+      "T1070.006": {
+        "name": "Timestomp",
+        "url": "https://attack.mitre.org/techniques/T1070/006",
+        "count": 1
+      },
+      "T1553.001": {
+        "name": "Gatekeeper Bypass",
+        "url": "https://attack.mitre.org/techniques/T1553/001",
+        "count": 2
+      },
+      "T1222.001": {
+        "name": "Windows File and Directory Permissions Modification",
+        "url": "https://attack.mitre.org/techniques/T1222/001",
+        "count": 1
+      },
+      "T1014": {
+        "name": "Rootkit",
+        "url": "https://attack.mitre.org/techniques/T1014",
+        "count": 1
+      },
+      "T1070.003": {
+        "name": "Clear Command History",
+        "url": "https://attack.mitre.org/techniques/T1070/003",
+        "count": 4
+      },
+      "T1134.005": {
+        "name": "SID-History Injection",
+        "url": "https://attack.mitre.org/techniques/T1134/005",
+        "count": 3
+      },
+      "T1574.006": {
+        "name": "LD_PRELOAD",
+        "url": "https://attack.mitre.org/techniques/T1574/006",
+        "count": 1
+      },
+      "T1548": {
+        "name": "Abuse Elevation Control Mechanism",
+        "url": "https://attack.mitre.org/techniques/T1548",
+        "count": 1
+      },
+      "T1078.001": {
+        "name": "Default Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/001",
+        "count": 1
+      },
+      "T1562.006": {
+        "name": "Indicator Blocking",
+        "url": "https://attack.mitre.org/techniques/T1562/006",
+        "count": 1
+      },
+      "T1550": {
+        "name": "Use Alternate Authentication Material",
+        "url": "https://attack.mitre.org/techniques/T1550",
+        "count": 1
+      },
+      "T1202": {
+        "name": "Indirect Command Execution",
+        "url": "https://attack.mitre.org/techniques/T1202",
+        "count": 1
+      }
+    },
+    "name": "Defense Evasion",
+    "url": "https://attack.mitre.org/tactics/TA0005",
+    "platform": [
+      "windows",
+      "all",
+      "unix",
+      "darwin",
+      "linux"
+    ]
+  },
+  "TA0008": {
+    "techniques": {
+      "T1021": {
+        "name": "Remote Services",
+        "url": "https://attack.mitre.org/techniques/T1021",
+        "count": 32
+      },
+      "T1021.005": {
+        "name": "VNC",
+        "url": "https://attack.mitre.org/techniques/T1021/005",
+        "count": 21
+      },
+      "T1550.002": {
+        "name": "Pass the Hash",
+        "url": "https://attack.mitre.org/techniques/T1550/002",
+        "count": 5
+      },
+      "T1563": {
+        "name": "Remote Service Session Hijacking",
+        "url": "https://attack.mitre.org/techniques/T1563",
+        "count": 5
+      },
+      "T1563.001": {
+        "name": "SSH Hijacking",
+        "url": "https://attack.mitre.org/techniques/T1563/001",
+        "count": 5
+      },
+      "T1021.004": {
+        "name": "SSH",
+        "url": "https://attack.mitre.org/techniques/T1021/004",
+        "count": 7
+      },
+      "T1021.003": {
+        "name": "Distributed Component Object Model",
+        "url": "https://attack.mitre.org/techniques/T1021/003",
+        "count": 3
+      },
+      "T1021.002": {
+        "name": "SMB/Windows Admin Shares",
+        "url": "https://attack.mitre.org/techniques/T1021/002",
+        "count": 5
+      },
+      "T1021.001": {
+        "name": "Remote Desktop Protocol",
+        "url": "https://attack.mitre.org/techniques/T1021/001",
+        "count": 6
+      },
+      "T1021.006": {
+        "name": "Windows Remote Management",
+        "url": "https://attack.mitre.org/techniques/T1021/006",
+        "count": 5
+      },
+      "T1210": {
+        "name": "Exploitation of Remote Services",
+        "url": "https://attack.mitre.org/techniques/T1210",
+        "count": 9
+      },
+      "T1091": {
+        "name": "Replication Through Removable Media",
+        "url": "https://attack.mitre.org/techniques/T1091",
+        "count": 1
+      },
+      "T1570": {
+        "name": "Lateral Tool Transfer",
+        "url": "https://attack.mitre.org/techniques/T1570",
+        "count": 2
+      },
+      "T1550.003": {
+        "name": "Pass the Ticket",
+        "url": "https://attack.mitre.org/techniques/T1550/003",
+        "count": 3
+      },
+      "T1550": {
+        "name": "Use Alternate Authentication Material",
+        "url": "https://attack.mitre.org/techniques/T1550",
+        "count": 1
+      }
+    },
+    "name": "Lateral Movement",
+    "url": "https://attack.mitre.org/tactics/TA0008",
+    "platform": [
+      "unix",
+      "windows",
+      "all"
+    ]
+  },
+  "TA0011": {
+    "techniques": {
+      "T1219": {
+        "name": "Remote Access Software",
+        "url": "https://attack.mitre.org/techniques/T1219",
+        "count": 26
+      },
+      "T1095": {
+        "name": "Non-Application Layer Protocol",
+        "url": "https://attack.mitre.org/techniques/T1095",
+        "count": 11
+      },
+      "T1105": {
+        "name": "Ingress Tool Transfer",
+        "url": "https://attack.mitre.org/techniques/T1105",
+        "count": 31
+      },
+      "T1572": {
+        "name": "Protocol Tunneling",
+        "url": "https://attack.mitre.org/techniques/T1572",
+        "count": 2
+      },
+      "T1571": {
+        "name": "Non-Standard Port",
+        "url": "https://attack.mitre.org/techniques/T1571",
+        "count": 3
+      },
+      "T1573": {
+        "name": "Encrypted Channel",
+        "url": "https://attack.mitre.org/techniques/T1573",
+        "count": 12
+      },
+      "T1090.002": {
+        "name": "External Proxy",
+        "url": "https://attack.mitre.org/techniques/T1090/002",
+        "count": 1
+      },
+      "T1071.001": {
+        "name": "Web Protocols",
+        "url": "https://attack.mitre.org/techniques/T1071/001",
+        "count": 7
+      },
+      "T1071": {
+        "name": "Application Layer Protocol",
+        "url": "https://attack.mitre.org/techniques/T1071",
+        "count": 13
+      },
+      "T1090": {
+        "name": "Proxy",
+        "url": "https://attack.mitre.org/techniques/T1090",
+        "count": 2
+      },
+      "T1573.002": {
+        "name": "Asymmetric Cryptography",
+        "url": "https://attack.mitre.org/techniques/T1573/002",
+        "count": 2
+      },
+      "T1071.004": {
+        "name": "DNS",
+        "url": "https://attack.mitre.org/techniques/T1071/004",
+        "count": 1
+      }
+    },
+    "name": "Command And Control",
+    "url": "https://attack.mitre.org/tactics/TA0011",
+    "platform": [
+      "unix",
+      "windows",
+      "all",
+      "linux",
+      "darwin"
+    ]
+  },
+  "TA0001": {
+    "techniques": {
+      "T1133": {
+        "name": "External Remote Services",
+        "url": "https://attack.mitre.org/techniques/T1133",
+        "count": 29
+      },
+      "T1190": {
+        "name": "Exploit Public-Facing Application",
+        "url": "https://attack.mitre.org/techniques/T1190",
+        "count": 27
+      },
+      "T1195": {
+        "name": "Supply Chain Compromise",
+        "url": "https://attack.mitre.org/techniques/T1195",
+        "count": 8
+      },
+      "T1091": {
+        "name": "Replication Through Removable Media",
+        "url": "https://attack.mitre.org/techniques/T1091",
+        "count": 1
+      },
+      "T1189": {
+        "name": "Drive-by Compromise",
+        "url": "https://attack.mitre.org/techniques/T1189",
+        "count": 1
+      },
+      "T1078.001": {
+        "name": "Default Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/001",
+        "count": 1
+      },
+      "T1078.002": {
+        "name": "Domain Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/002",
+        "count": 1
+      }
+    },
+    "name": "Initial Access",
+    "url": "https://attack.mitre.org/tactics/TA0001",
+    "platform": [
+      "unix",
+      "windows",
+      "all"
+    ]
+  },
+  "TA0006": {
+    "techniques": {
+      "T1003.002": {
+        "name": "Security Account Manager",
+        "url": "https://attack.mitre.org/techniques/T1003/002",
+        "count": 12
+      },
+      "T1110": {
+        "name": "Brute Force",
+        "url": "https://attack.mitre.org/techniques/T1110",
+        "count": 14
+      },
+      "T1003": {
+        "name": "OS Credential Dumping",
+        "url": "https://attack.mitre.org/techniques/T1003",
+        "count": 15
+      },
+      "T1552.001": {
+        "name": "Credentials In Files",
+        "url": "https://attack.mitre.org/techniques/T1552/001",
+        "count": 4
+      },
+      "T1040": {
+        "name": "Network Sniffing",
+        "url": "https://attack.mitre.org/techniques/T1040",
+        "count": 13
+      },
+      "T1003.001": {
+        "name": "LSASS Memory",
+        "url": "https://attack.mitre.org/techniques/T1003/001",
+        "count": 16
+      },
+      "T1558": {
+        "name": "Steal or Forge Kerberos Tickets",
+        "url": "https://attack.mitre.org/techniques/T1558",
+        "count": 2
+      },
+      "T1003.004": {
+        "name": "LSA Secrets",
+        "url": "https://attack.mitre.org/techniques/T1003/004",
+        "count": 9
+      },
+      "T1003.006": {
+        "name": "DCSync",
+        "url": "https://attack.mitre.org/techniques/T1003/006",
+        "count": 9
+      },
+      "T1056": {
+        "name": "Input Capture",
+        "url": "https://attack.mitre.org/techniques/T1056",
+        "count": 1
+      },
+      "T1003.008": {
+        "name": "/etc/passwd and /etc/shadow",
+        "url": "https://attack.mitre.org/techniques/T1003/008",
+        "count": 4
+      },
+      "T1110.001": {
+        "name": "Password Guessing",
+        "url": "https://attack.mitre.org/techniques/T1110/001",
+        "count": 1
+      },
+      "T1003.003": {
+        "name": "NTDS",
+        "url": "https://attack.mitre.org/techniques/T1003/003",
+        "count": 8
+      },
+      "T1556.002": {
+        "name": "Password Filter DLL",
+        "url": "https://attack.mitre.org/techniques/T1556/002",
+        "count": 1
+      },
+      "T1555.004": {
+        "name": "Windows Credential Manager",
+        "url": "https://attack.mitre.org/techniques/T1555/004",
+        "count": 6
+      },
+      "T1056.001": {
+        "name": "Keylogging",
+        "url": "https://attack.mitre.org/techniques/T1056/001",
+        "count": 3
+      },
+      "T1555.003": {
+        "name": "Credentials from Web Browsers",
+        "url": "https://attack.mitre.org/techniques/T1555/003",
+        "count": 9
+      },
+      "T1552.006": {
+        "name": "Group Policy Preferences",
+        "url": "https://attack.mitre.org/techniques/T1552/006",
+        "count": 1
+      },
+      "T1552": {
+        "name": "Unsecured Credentials",
+        "url": "https://attack.mitre.org/techniques/T1552",
+        "count": 1
+      },
+      "T1552.004": {
+        "name": "Private Keys",
+        "url": "https://attack.mitre.org/techniques/T1552/004",
+        "count": 3
+      },
+      "T1552.002": {
+        "name": "Credentials in Registry",
+        "url": "https://attack.mitre.org/techniques/T1552/002",
+        "count": 3
+      },
+      "T1110.003": {
+        "name": "Password Spraying",
+        "url": "https://attack.mitre.org/techniques/T1110/003",
+        "count": 2
+      },
+      "T1555": {
+        "name": "Credentials from Password Stores",
+        "url": "https://attack.mitre.org/techniques/T1555",
+        "count": 3
+      },
+      "T1555.001": {
+        "name": "Keychain",
+        "url": "https://attack.mitre.org/techniques/T1555/001",
+        "count": 3
+      },
+      "T1555.002": {
+        "name": "Securityd Memory",
+        "url": "https://attack.mitre.org/techniques/T1555/002",
+        "count": 3
+      },
+      "T1552.003": {
+        "name": "Bash History",
+        "url": "https://attack.mitre.org/techniques/T1552/003",
+        "count": 1
+      },
+      "T1606.002": {
+        "name": "SAML Tokens",
+        "url": "https://attack.mitre.org/techniques/T1606/002",
+        "count": 1
+      },
+      "T1557.001": {
+        "name": "LLMNR/NBT-NS Poisoning and SMB Relay",
+        "url": "https://attack.mitre.org/techniques/T1557/001",
+        "count": 1
+      },
+      "T1558.001": {
+        "name": "Golden Ticket",
+        "url": "https://attack.mitre.org/techniques/T1558/001",
+        "count": 1
+      },
+      "T1558.002": {
+        "name": "Silver Ticket",
+        "url": "https://attack.mitre.org/techniques/T1558/002",
+        "count": 1
+      }
+    },
+    "name": "Credential Access",
+    "url": "https://attack.mitre.org/tactics/TA0006",
+    "platform": [
+      "windows",
+      "all",
+      "linux",
+      "unix",
+      "darwin"
+    ]
+  },
+  "TA0004": {
+    "techniques": {
+      "T1078.002": {
+        "name": "Domain Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/002",
+        "count": 7
+      },
+      "T1078.003": {
+        "name": "Local Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/003",
+        "count": 11
+      },
+      "T1547.001": {
+        "name": "Registry Run Keys / Startup Folder",
+        "url": "https://attack.mitre.org/techniques/T1547/001",
+        "count": 11
+      },
+      "T1548.002": {
+        "name": "Bypass User Account Control",
+        "url": "https://attack.mitre.org/techniques/T1548/002",
+        "count": 13
+      },
+      "T1055": {
+        "name": "Process Injection",
+        "url": "https://attack.mitre.org/techniques/T1055",
+        "count": 11
+      },
+      "T1055.001": {
+        "name": "Dynamic-link Library Injection",
+        "url": "https://attack.mitre.org/techniques/T1055/001",
+        "count": 1
+      },
+      "T1547.012": {
+        "name": "Print Processors",
+        "url": "https://attack.mitre.org/techniques/T1547/012",
+        "count": 3
+      },
+      "T1055.002": {
+        "name": "Portable Executable Injection",
+        "url": "https://attack.mitre.org/techniques/T1055/002",
+        "count": 4
+      },
+      "T1055.012": {
+        "name": "Process Hollowing",
+        "url": "https://attack.mitre.org/techniques/T1055/012",
+        "count": 4
+      },
+      "T1543.003": {
+        "name": "Windows Service",
+        "url": "https://attack.mitre.org/techniques/T1543/003",
+        "count": 6
+      },
+      "T1547.005": {
+        "name": "Security Support Provider",
+        "url": "https://attack.mitre.org/techniques/T1547/005",
+        "count": 2
+      },
+      "T1546.007": {
+        "name": "Netsh Helper DLL",
+        "url": "https://attack.mitre.org/techniques/T1546/007",
+        "count": 2
+      },
+      "T1546.003": {
+        "name": "Windows Management Instrumentation Event Subscription",
+        "url": "https://attack.mitre.org/techniques/T1546/003",
+        "count": 2
+      },
+      "T1547.004": {
+        "name": "Winlogon Helper DLL",
+        "url": "https://attack.mitre.org/techniques/T1547/004",
+        "count": 2
+      },
+      "T1574": {
+        "name": "Hijack Execution Flow",
+        "url": "https://attack.mitre.org/techniques/T1574",
+        "count": 1
+      },
+      "T1574.001": {
+        "name": "DLL Search Order Hijacking",
+        "url": "https://attack.mitre.org/techniques/T1574/001",
+        "count": 1
+      },
+      "T1548": {
+        "name": "Abuse Elevation Control Mechanism",
+        "url": "https://attack.mitre.org/techniques/T1548",
+        "count": 3
+      },
+      "T1546": {
+        "name": "Event Triggered Execution",
+        "url": "https://attack.mitre.org/techniques/T1546",
+        "count": 1
+      },
+      "T1546.011": {
+        "name": "Application Shimming",
+        "url": "https://attack.mitre.org/techniques/T1546/011",
+        "count": 1
+      },
+      "T1547.014": {
+        "name": "Active Setup",
+        "url": "https://attack.mitre.org/techniques/T1547/014",
+        "count": 1
+      },
+      "T1548.001": {
+        "name": "Setuid and Setgid",
+        "url": "https://attack.mitre.org/techniques/T1548/001",
+        "count": 1
+      },
+      "T1053.005": {
+        "name": "Scheduled Task",
+        "url": "https://attack.mitre.org/techniques/T1053/005",
+        "count": 3
+      },
+      "T1055.004": {
+        "name": "Asynchronous Procedure Call",
+        "url": "https://attack.mitre.org/techniques/T1055/004",
+        "count": 1
+      },
+      "T1548.003": {
+        "name": "Sudo and Sudo Caching",
+        "url": "https://attack.mitre.org/techniques/T1548/003",
+        "count": 3
+      },
+      "T1053.003": {
+        "name": "Cron",
+        "url": "https://attack.mitre.org/techniques/T1053/003",
+        "count": 3
+      },
+      "T1037.004": {
+        "name": "RC Scripts",
+        "url": "https://attack.mitre.org/techniques/T1037/004",
+        "count": 3
+      },
+      "T1548.004": {
+        "name": "Elevated Execution with Prompt",
+        "url": "https://attack.mitre.org/techniques/T1548/004",
+        "count": 2
+      },
+      "T1134.001": {
+        "name": "Token Impersonation/Theft",
+        "url": "https://attack.mitre.org/techniques/T1134/001",
+        "count": 1
+      },
+      "T1547.002": {
+        "name": "Authentication Package",
+        "url": "https://attack.mitre.org/techniques/T1547/002",
+        "count": 1
+      },
+      "T1547.009": {
+        "name": "Shortcut Modification",
+        "url": "https://attack.mitre.org/techniques/T1547/009",
+        "count": 2
+      },
+      "T1547.010": {
+        "name": "Port Monitors",
+        "url": "https://attack.mitre.org/techniques/T1547/010",
+        "count": 1
+      },
+      "T1068": {
+        "name": "Exploitation for Privilege Escalation",
+        "url": "https://attack.mitre.org/techniques/T1068",
+        "count": 1
+      },
+      "T1134": {
+        "name": "Access Token Manipulation",
+        "url": "https://attack.mitre.org/techniques/T1134",
+        "count": 4
+      },
+      "T1546.012": {
+        "name": "Image File Execution Options Injection",
+        "url": "https://attack.mitre.org/techniques/T1546/012",
+        "count": 1
+      },
+      "T1543": {
+        "name": "Create or Modify System Process",
+        "url": "https://attack.mitre.org/techniques/T1543",
+        "count": 2
+      },
+      "T1547.007": {
+        "name": "Re-opened Applications",
+        "url": "https://attack.mitre.org/techniques/T1547/007",
+        "count": 1
+      },
+      "T1134.005": {
+        "name": "SID-History Injection",
+        "url": "https://attack.mitre.org/techniques/T1134/005",
+        "count": 3
+      },
+      "T1574.006": {
+        "name": "LD_PRELOAD",
+        "url": "https://attack.mitre.org/techniques/T1574/006",
+        "count": 1
+      },
+      "T1078.001": {
+        "name": "Default Accounts",
+        "url": "https://attack.mitre.org/techniques/T1078/001",
+        "count": 1
+      },
+      "T1543.002": {
+        "name": "Systemd Service",
+        "url": "https://attack.mitre.org/techniques/T1543/002",
+        "count": 1
+      },
+      "T1547.003": {
+        "name": "Time Providers",
+        "url": "https://attack.mitre.org/techniques/T1547/003",
+        "count": 1
+      },
+      "T1484": {
+        "name": "Domain Policy Modification",
+        "url": "https://attack.mitre.org/techniques/T1484",
+        "count": 2
+      },
+      "T1053": {
+        "name": "Scheduled Task/Job",
+        "url": "https://attack.mitre.org/techniques/T1053",
+        "count": 1
+      }
+    },
+    "name": "Privilege Escalation",
+    "url": "https://attack.mitre.org/tactics/TA0004",
+    "platform": [
+      "windows",
+      "all",
+      "unix",
+      "darwin",
+      "linux"
+    ]
+  },
+  "TA0042": {
+    "techniques": {
+      "T1587.001": {
+        "name": "Malware",
+        "url": "https://attack.mitre.org/techniques/T1587/001",
+        "count": 9
+      },
+      "T1587": {
+        "name": "Develop Capabilities",
+        "url": "https://attack.mitre.org/techniques/T1587",
+        "count": 1
+      },
+      "T1587.004": {
+        "name": "Exploits",
+        "url": "https://attack.mitre.org/techniques/T1587/004",
+        "count": 2
+      },
+      "T1588.004": {
+        "name": "Digital Certificates",
+        "url": "https://attack.mitre.org/techniques/T1588/004",
+        "count": 1
+      }
+    },
+    "name": "Resource Development",
+    "url": "https://attack.mitre.org/tactics/TA0042",
+    "platform": [
+      "windows",
+      "all",
+      "unix"
+    ]
+  },
+  "TA0002": {
+    "techniques": {
+      "T1059.001": {
+        "name": "PowerShell",
+        "url": "https://attack.mitre.org/techniques/T1059/001",
+        "count": 57
+      },
+      "T1569.002": {
+        "name": "Service Execution",
+        "url": "https://attack.mitre.org/techniques/T1569/002",
+        "count": 11
+      },
+      "T1059.003": {
+        "name": "Windows Command Shell",
+        "url": "https://attack.mitre.org/techniques/T1059/003",
+        "count": 13
+      },
+      "T1047": {
+        "name": "Windows Management Instrumentation",
+        "url": "https://attack.mitre.org/techniques/T1047",
+        "count": 15
+      },
+      "T1059.005": {
+        "name": "Visual Basic",
+        "url": "https://attack.mitre.org/techniques/T1059/005",
+        "count": 2
+      },
+      "T1204.002": {
+        "name": "Malicious File",
+        "url": "https://attack.mitre.org/techniques/T1204/002",
+        "count": 12
+      },
+      "T1059": {
+        "name": "Command and Scripting Interpreter",
+        "url": "https://attack.mitre.org/techniques/T1059",
+        "count": 36
+      },
+      "T1053.005": {
+        "name": "Scheduled Task",
+        "url": "https://attack.mitre.org/techniques/T1053/005",
+        "count": 4
+      },
+      "T1059.002": {
+        "name": "AppleScript",
+        "url": "https://attack.mitre.org/techniques/T1059/002",
+        "count": 4
+      },
+      "T1203": {
+        "name": "Exploitation for Client Execution",
+        "url": "https://attack.mitre.org/techniques/T1203",
+        "count": 3
+      },
+      "T1059.006": {
+        "name": "Python",
+        "url": "https://attack.mitre.org/techniques/T1059/006",
+        "count": 3
+      },
+      "T1059.007": {
+        "name": "JavaScript",
+        "url": "https://attack.mitre.org/techniques/T1059/007",
+        "count": 3
+      },
+      "T1059.004": {
+        "name": "Unix Shell",
+        "url": "https://attack.mitre.org/techniques/T1059/004",
+        "count": 7
+      },
+      "T1053.003": {
+        "name": "Cron",
+        "url": "https://attack.mitre.org/techniques/T1053/003",
+        "count": 4
+      },
+      "T1569": {
+        "name": "System Services",
+        "url": "https://attack.mitre.org/techniques/T1569",
+        "count": 2
+      },
+      "T1053": {
+        "name": "Scheduled Task/Job",
+        "url": "https://attack.mitre.org/techniques/T1053",
+        "count": 2
+      },
+      "T1204": {
+        "name": "User Execution",
+        "url": "https://attack.mitre.org/techniques/T1204",
+        "count": 1
+      },
+      "T1129": {
+        "name": "Shared Modules",
+        "url": "https://attack.mitre.org/techniques/T1129",
+        "count": 1
+      },
+      "T1053.002": {
+        "name": "At (Windows)",
+        "url": "https://attack.mitre.org/techniques/T1053/002",
+        "count": 1
+      },
+      "T1053.001": {
+        "name": "At (Linux)",
+        "url": "https://attack.mitre.org/techniques/T1053/001",
+        "count": 2
+      }
+    },
+    "name": "Execution",
+    "url": "https://attack.mitre.org/tactics/TA0002",
+    "platform": [
+      "windows",
+      "all",
+      "darwin",
+      "unix",
+      "linux"
+    ]
+  },
+  "TA0009": {
+    "techniques": {
+      "T1005": {
+        "name": "Data from Local System",
+        "url": "https://attack.mitre.org/techniques/T1005",
+        "count": 8
+      },
+      "T1056": {
+        "name": "Input Capture",
+        "url": "https://attack.mitre.org/techniques/T1056",
+        "count": 1
+      },
+      "T1113": {
+        "name": "Screen Capture",
+        "url": "https://attack.mitre.org/techniques/T1113",
+        "count": 2
+      },
+      "T1115": {
+        "name": "Clipboard Data",
+        "url": "https://attack.mitre.org/techniques/T1115",
+        "count": 1
+      },
+      "T1602.001": {
+        "name": "SNMP (MIB Dump)",
+        "url": "https://attack.mitre.org/techniques/T1602/001",
+        "count": 2
+      },
+      "T1560.001": {
+        "name": "Archive via Utility",
+        "url": "https://attack.mitre.org/techniques/T1560/001",
+        "count": 3
+      },
+      "T1056.001": {
+        "name": "Keylogging",
+        "url": "https://attack.mitre.org/techniques/T1056/001",
+        "count": 3
+      },
+      "T1114.002": {
+        "name": "Remote Email Collection",
+        "url": "https://attack.mitre.org/techniques/T1114/002",
+        "count": 3
+      },
+      "T1074": {
+        "name": "Data Staged",
+        "url": "https://attack.mitre.org/techniques/T1074",
+        "count": 2
+      },
+      "T1074.001": {
+        "name": "Local Data Staging",
+        "url": "https://attack.mitre.org/techniques/T1074/001",
+        "count": 2
+      },
+      "T1114": {
+        "name": "Email Collection",
+        "url": "https://attack.mitre.org/techniques/T1114",
+        "count": 2
+      },
+      "T1185": {
+        "name": "Man in the Browser",
+        "url": "https://attack.mitre.org/techniques/T1185",
+        "count": 1
+      },
+      "T1557.001": {
+        "name": "LLMNR/NBT-NS Poisoning and SMB Relay",
+        "url": "https://attack.mitre.org/techniques/T1557/001",
+        "count": 1
+      }
+    },
+    "name": "Collection",
+    "url": "https://attack.mitre.org/tactics/TA0009",
+    "platform": [
+      "windows",
+      "unix",
+      "darwin",
+      "linux",
+      "all"
+    ]
+  },
+  "TA0040": {
+    "techniques": {
+      "T1486": {
+        "name": "Data Encrypted for Impact",
+        "url": "https://attack.mitre.org/techniques/T1486",
+        "count": 5
+      },
+      "T1490": {
+        "name": "Inhibit System Recovery",
+        "url": "https://attack.mitre.org/techniques/T1490",
+        "count": 11
+      },
+      "T1496": {
+        "name": "Resource Hijacking",
+        "url": "https://attack.mitre.org/techniques/T1496",
+        "count": 9
+      },
+      "T1485": {
+        "name": "Data Destruction",
+        "url": "https://attack.mitre.org/techniques/T1485",
+        "count": 1
+      },
+      "T1561.002": {
+        "name": "Disk Structure Wipe",
+        "url": "https://attack.mitre.org/techniques/T1561/002",
+        "count": 1
+      },
+      "T1489": {
+        "name": "Service Stop",
+        "url": "https://attack.mitre.org/techniques/T1489",
+        "count": 1
+      },
+      "T1529": {
+        "name": "System Shutdown/Reboot",
+        "url": "https://attack.mitre.org/techniques/T1529",
+        "count": 1
+      }
+    },
+    "name": "Impact",
+    "url": "https://attack.mitre.org/tactics/TA0040",
+    "platform": [
+      "windows",
+      "all",
+      "unix"
+    ]
+  },
+  "TA0010": {
+    "techniques": {
+      "T1048": {
+        "name": "Exfiltration Over Alternative Protocol",
+        "url": "https://attack.mitre.org/techniques/T1048",
+        "count": 8
+      },
+      "T1048.003": {
+        "name": "Exfiltration Over Unencrypted/Obfuscated Non-C2 Protocol",
+        "url": "https://attack.mitre.org/techniques/T1048/003",
+        "count": 2
+      },
+      "T1020": {
+        "name": "Automated Exfiltration",
+        "url": "https://attack.mitre.org/techniques/T1020",
+        "count": 3
+      },
+      "T1041": {
+        "name": "Exfiltration Over C2 Channel",
+        "url": "https://attack.mitre.org/techniques/T1041",
+        "count": 1
+      },
+      "T1567": {
+        "name": "Exfiltration Over Web Service",
+        "url": "https://attack.mitre.org/techniques/T1567",
+        "count": 2
+      }
+    },
+    "name": "Exfiltration",
+    "url": "https://attack.mitre.org/tactics/TA0010",
+    "platform": [
+      "windows",
+      "all",
+      "unix"
+    ]
+  },
+  "TA0043": {
+    "techniques": {
+      "T1595.002": {
+        "name": "Vulnerability Scanning",
+        "url": "https://attack.mitre.org/techniques/T1595/002",
+        "count": 3
+      },
+      "T1592": {
+        "name": "Gather Victim Host Information",
+        "url": "https://attack.mitre.org/techniques/T1592",
+        "count": 1
+      },
+      "T1592.001": {
+        "name": "Hardware",
+        "url": "https://attack.mitre.org/techniques/T1592/001",
+        "count": 2
+      },
+      "T1592.004": {
+        "name": "Client Configurations",
+        "url": "https://attack.mitre.org/techniques/T1592/004",
+        "count": 2
+      },
+      "T1590.004": {
+        "name": "Network Topology",
+        "url": "https://attack.mitre.org/techniques/T1590/004",
+        "count": 1
+      }
+    },
+    "name": "Reconnaissance",
+    "url": "https://attack.mitre.org/tactics/TA0043",
+    "platform": [
+      "windows",
+      "all",
+      "unix"
+    ]
+  }
+}

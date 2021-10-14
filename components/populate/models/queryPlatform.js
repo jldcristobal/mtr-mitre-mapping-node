@@ -1,12 +1,8 @@
 const sequelize = require('../../../helpers/mysql-db-helper');
 const { DataTypes } = require('sequelize');
 
-const QueryPlatform = sequelize.define('matrix_query_platform', {
-  query_id: {
-    type: DataTypes.STRING(400),
-    allowNull: false
-  },
-  platform_id: {
+const QueryPlatform = sequelize.define('matrix_qplatform', {
+  platform_name: {
     type: DataTypes.STRING(300),
     allowNull: false
   }

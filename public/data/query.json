@@ -1,0 +1,807 @@
+{
+  "1": {
+    "name": "MITREE",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1021: Remote Services",
+        "Frequency": "24/7",
+        "Query": "SELECT datetime, eventid, JSON_EXTRACT(data, '$.EventData.AccountName') AS AccountName, JSON_EXTRACT(data, '$.EventData.ServiceName') AS ServiceName, JSON_EXTRACT(data, '$.EventData.ImagePath') AS ImagePath, JSON_EXTRACT(data, '$.EventData.ServiceType') AS ServiceType, JSON_EXTRACT(data, '$.EventData.StartType') AS StartType FROM sophos_windows_events WHERE source = 'System' AND ImagePath LIKE  '%powershell%' AND eventid = 7045 AND (ImagePath LIKE '%JAB' OR  ImagePath LIKE '%SQB%' OR ImagePath LIKE '%H4s%' OR ImagePath LIKE '%invoke%'  OR ImagePath LIKE '%-enc%' OR ImagePath LIKE '%IEX%' OR ImagePath LIKE  '%downloadstring%');",
+        "Description": "COBALTSTRIKE OR POWERSHELLEMPIRE Searches for specific powershell/colbalt activty within the parameters of AccountName, ServiceName, ImagePath, ServiceType, and StartType"
+      }
+    ]
+  },
+  "295": {
+    "name": "Copy of MITREE",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1021: Remote Services",
+        "Frequency": "24/7",
+        "Query": "SELECT datetime, eventid, JSON_EXTRACT(data, '$.EventData.AccountName') AS AccountName, JSON_EXTRACT(data, '$.EventData.ServiceName') AS ServiceName, JSON_EXTRACT(data, '$.EventData.ImagePath') AS ImagePath, JSON_EXTRACT(data, '$.EventData.ServiceType') AS ServiceType, JSON_EXTRACT(data, '$.EventData.StartType') AS StartType FROM sophos_windows_events WHERE source = 'System' AND ImagePath LIKE  '%powershell%' AND eventid = 7045 AND (ImagePath LIKE '%JAB' OR  ImagePath LIKE '%SQB%' OR ImagePath LIKE '%H4s%' OR ImagePath LIKE '%invoke%'  OR ImagePath LIKE '%-enc%' OR ImagePath LIKE '%IEX%' OR ImagePath LIKE  '%downloadstring%');",
+        "Description": "COBALTSTRIKE OR POWERSHELLEMPIRE Searches for specific powershell/colbalt activty within the parameters of AccountName, ServiceName, ImagePath, ServiceType, and StartType"
+      }
+    ]
+  },
+  "589": {
+    "name": "T1010: Discovery",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1010: Windows_programs",
+        "OperatingSystem": "Windows",
+        "Description": "Get all the installed programs on the target machine.\t",
+        "Query": "SELECTname, version, language, install_source, publisher, identifying_number, install_dateFROMprograms;",
+        "Frequency": "14400 seconds "
+      }
+    ]
+  },
+  "618": {
+    "name": "T1202: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1202: windows_wsl_installed ",
+        "OperatingSystem": "Windows",
+        "Description": "Query to enumerate all devices that have WSL (Windows Subsytem for Linux) installed. ",
+        "Query": "SELECT file.filename, file.path, file.atime, file.mtime, file.ctime, file.product_version, sfp.sha256 FROMfile INNERJOINsophos_file_propertiesASsfpONsfp.pathname = file.path WHEREfile.path =\"C:\\Windows\\System32\\wsl.exe\";",
+        "Frequency": "86400 seconds"
+      }
+    ]
+  },
+  "646": {
+    "name": "T1185: Collection",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1185: Man in the Browser",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves the list of extensions for Chrome in the target system. ",
+        "Query": "SELECTDISTINCTce.uid, ce.name, ce.identifier, ce.version, ce.author, ce.path, ce.update_urlFROMchrome_extensionsASceJOINlogged_in_usersASliuONliu.user=u.usernameJOINusersASuONu.uid=ce.uid;",
+        "Frequency": "14400 seconds"
+      }
+    ]
+  },
+  "674": {
+    "name": "T1176: Browser extension",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1776: firefox_addons ",
+        "OperatingSystem": "Darwin",
+        "Description": "Retrieves the list of addons for Firefox in the target system. ",
+        "Query": "SELECTuid,name, identifier, version, description, path, source_url, creatorFROMfirefox_addons;",
+        "Frequency": "14400 seconds"
+      }
+    ]
+  },
+  "746": {
+    "name": "T1546: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1546: vulnerability_fontblocking ",
+        "OperatingSystem": "Windows",
+        "Frequency": "3600 Seconds",
+        "Description": "FontBlocking is disabled ",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'font_blocking_enabled', data = 1000000000000 )ASanalysis FROMregistry WHEREkey='HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\MitigationOptions' ANDname='MitigationOptions_FontBlocking' ANDdata != 1000000000000;"
+      }
+    ]
+  },
+  "799": {
+    "name": "T1546: Privilege Escalation",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1546: vulnerability_fontblocking ",
+        "OperatingSystem": "Windows",
+        "Frequency": "3600 Seconds",
+        "Description": "FontBlocking is disabled ",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'font_blocking_enabled', data = 1000000000000 )ASanalysis FROMregistry WHEREkey='HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\MitigationOptions' ANDname='MitigationOptions_FontBlocking' ANDdata != 1000000000000;"
+      }
+    ]
+  },
+  "859": {
+    "name": "T1059: Execution",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1059.001: windows_powershell_script_blocks",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves powershell script blocks",
+        "Query": "SELECT spe.time, spe.script_block_id, spe.script_block_count, SUBSTR(spe.script_text, 1, 32766)ASscript_text, CASE WHENlength(spe.script_text) >= 32765THEN1 ELSE0 ENDscript_text_truncated, spe.script_name, spe.script_path FROMsophos_powershell_eventsASspe WHEREspe.script_text !='prompt' -- sophos_powershell_events doesn't require a 300 second buffer as the events appear immediately ANDspe.time> STRFTIME('%s', 'NOW') - 625;",
+        "Frequency": "600 Seconds"
+      }
+    ]
+  },
+  "893": {
+    "name": "T1083: Discovery",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1083: windows_disk_md5 ",
+        "OperatingSystem": "Windows",
+        "Description": "Return hashes of binaries running from Downloads folder. ",
+        "Query": "SELECT file.filename, file.ctime, file.path, sfp.sha1, sfp.sha256, sfp.fileSize, sfp.mlScore, sfp.mlScoreData, sfp.puaScore, sfp.globalRep, sfp.globalRepData, sfp.localRep, sfp.localRepData, sfp.coreFileInfo FROMfile LEFTJOINsophos_file_propertiesASsfpONfile.path = sfp.pathname WHERE( file.pathLIKE'C:\\Users\\%\\Downloads\\%%'OR file.pathLIKE'C:\\Users\\%\\Desktop\\%%'OR file.pathLIKE'C:\\Users\\%\\Appdata\\Roaming\\%%'OR file.pathLIKE'C:\\Users\\%\\Appdata\\Local\\Temp\\%%'OR file.pathLIKE'C:\\Windows\\Temp\\%%' )AND( file.filenameLIKE'%.exe'OR file.filenameLIKE'%.dll'OR file.filenameLIKE'%.ps1' );",
+        "Frequency": "14400"
+      }
+    ]
+  },
+  "932": {
+    "name": "T1222: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1222.001: windows_event_acl_set_on_admin_accounts_dc",
+        "OperatingSystem": "Windows",
+        "Description": "Returns hashes for files which have changed in the last 10 mins. ",
+        "Frequency": "600 Seconds "
+      }
+    ]
+  },
+  "971": {
+    "name": "T1037: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1037.005: windows_startup_items ",
+        "OperatingSystem": "Windows",
+        "Description": "Return descriptions of startup items. ",
+        "Query": "SELECT PRINTF('%s.exe', REGEX_SPLIT(startup_items.path,'.exe', 0))ASmod_path, name, hash.path, type, status, username, sfp.sha1, hash.sha256, sfp.fileSize, sfp.mlScore, sfp.mlScoreData, sfp.puaScore, sfp.globalRep, sfp.globalRepData, sfp.localRep, sfp.localRepData, sfp.coreFileInfo FROMstartup_items JOINhashONstartup_items.path = hash.path JOINsophos_file_propertiesASsfpONsfp.sha256 = hash.sha256 WHEREhash.path = mod_path ANDmod_pathLIKE'%.exe%' ANDmod_pathNOTLIKE'%Windows%';",
+        "Frequency": "14400 seconds"
+      }
+    ]
+  },
+  "1005": {
+    "name": "T1057: Discovery",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1057: running_processes_windows_sophos",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves the list of running processes in the target system using the sophos_process_journal table.",
+        "Frequency": "20 Seconds",
+        "Query": "SELECT GROUP_CONCAT(process_events.pid)ASpids, REPLACE(process_events.path, (SELECTREGEX_SPLIT(process_events.path,\"[^\\/]+$\", 0)),'')ASname, SUBSTR(process_events.cmdline, 1, 32766)AScmdline, GROUP_CONCAT(process_events.parent)ASparents, process_events.path, process_events.gid, process_events.uid, process_events.euid, process_events.egid, hash.sha1, hash.sha256, process_events.time FROMprocess_events JOINhashAShash WHEREhash.path = process_events.path GROUPBYprocess_events.cmdline, hash.sha1;"
+      }
+    ]
+  },
+  "1065": {
+    "name": "T1489: Impact",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1489: stopped_processes_windows_sophos",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves the list of stopped processes which have ended in target system from sophos_process_journal table.",
+        "Frequency": "20 Seconds"
+      }
+    ]
+  },
+  "1092": {
+    "name": "T1547: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1547: launchd_md5 ",
+        "OperatingSystem": "Darwin",
+        "Description": "Return auto-start, non-apple launch daemons including binary hashes.",
+        "Frequency": "14400 Seconds"
+      }
+    ]
+  },
+  "1134": {
+    "name": "T1543: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1543: vulnerability_kernel_null_page_access ",
+        "OperatingSystem": "Windows",
+        "Description": "Kernel Null page access is allowed ",
+        "Frequency": "3600 Seconds",
+        "Query": "SELECT  key,  path,  name,  type,  data,  mtime,  JSON_OBJECT(   'kernel_null_page_access_allowed', data = 1 ) AS analysis FROM registry WHEREkey = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management' AND name ='EnableLowVaAccess' AND data = 1;"
+      }
+    ]
+  },
+  "1196": {
+    "name": "T1040: Discovery",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1040: threat_promisc_interfaces_linux",
+        "Description": "Return all promiscous network interfaces on Linux.",
+        "OperatingSystem": "Linux",
+        "Frequency": "43200"
+      }
+    ]
+  },
+  "1235": {
+    "name": "T1564: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1564.002: threat_osx_hidden_users",
+        "OperatingSystem": "Darwin",
+        "Description": "Detect users that do not appear on the login screen on MacOS.",
+        "Frequency": "43200"
+      }
+    ]
+  },
+  "1257": {
+    "name": "T1036: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1036.006: threat_space_after_filename",
+        "OperatingSystem": "Linux, Darwin",
+        "Description": "SELECT target_path as path, action, uid, gid, mode, size, atime, mtime, ctime, sha1, sha256 from file_events where path like '% ' and action != 'DELETED';",
+        "Query": "SELECTtarget_pathaspath,action, uid, gid, mode,size, atime, mtime, ctime, sha1, sha256fromfile_eventswherepathlike'% 'andaction!='DELETED';",
+        "Frequency": "43200 Seconds"
+      }
+    ]
+  },
+  "1286": {
+    "name": "T1550: Lateral Movement",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1550.003: windows_event_successful_logon",
+        "OperatingSystem": "Windows",
+        "Query": "SELECT eventid, CAST(JSON_EXTRACT(data,'$.EventData.LogonType')asinteger)aslogon_type, REPLACE(JSON_EXTRACT(data,'$.EventData.LogonProcessName'),' ','')aslogon_process, JSON_EXTRACT(data,'$.EventData.IpAddress')ASremote_address, JSON_EXTRACT(data,'$.EventData.IpPort')ASremote_port, JSON_EXTRACT(data,'$.EventData.ProcessName')ASname, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.TargetUserSid')AStarget_sid, CAST(JSON_EXTRACT(data,'$.EventData.KeyLength')asinteger)ASkey_length, provider_name, source FROMsophos_windows_events WHEREsource ='Security' AND(( eventid = 4624 ANDlogon_type = 3 ANDlogon_process ='NtLmSsp' ANDkey_length = 0 ANDtarget_sid !='S-1-5-7' )OR( eventid = 4648 ANDremote_addressNOTLIKE'127.%.%.%' ANDremote_addressNOTIN('0.0.0.0',':','-',':1') ANDremote_portNOTIN(0) ANDnameNOTLIKE'C:\\Windows\\System32\\%' ANDname!='' ANDtarget_domain != subject_domain ANDtarget_domain !='' )) ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "3600 Seconds",
+        "Description": "Retrieves a list of successful logon events"
+      }
+    ]
+  },
+  "1318": {
+    "name": "T1070: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1070.001: windows_event_audit_log_cleared",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of audit log clearing events",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.UserData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.UserData.SubjectDomainName')ASsubject_domain, 'The audit log was cleared.'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventidIN(1102, 517) ANDsource ='Security' ANDprovider_name !='AD FS Auditing' ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "60 Minutes"
+      }
+    ]
+  },
+  "1409": {
+    "name": "T1053: Execution",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1053.005: windows_event_scheduled_task_created ",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of scheduled task created events",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TaskName')AStask_name, JSON_EXTRACT(data,'$.EventData.TaskContent')AStask_content, 'A scheduled task was created.'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4698 ANDsource ='Security' ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1434": {
+    "name": "T1110: Credential Accdess",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1110: windows_event_invalid_logon_brute_force",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of brute force events",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.Status')ASstatus, JSON_EXTRACT(data,'$.EventData.FailureReason')ASfailure_reason, JSON_EXTRACT(data,'$.EventData.SubStatus')ASsub_status, JSON_EXTRACT(data,'$.EventData.LogonType')ASlogon_type, JSON_EXTRACT(data,'$.EventData.LogonProcessName')ASlogon_process, JSON_EXTRACT(data,'$.EventData.AuthenticationPackageName')ASauthentication_package, JSON_EXTRACT(data,'$.EventData.TransmittedServices')AStransmitted_services, JSON_EXTRACT(data,'$.EventData.KeyLength')ASkey_length, JSON_EXTRACT(data,'$.EventData.ProcessName')ASname, JSON_EXTRACT(data,'$.EventData.IpAddress')ASremote_address, JSON_EXTRACT(data,'$.EventData.IpPort')ASremote_port, 'Source IP is shuffling through 20 or more different usernames, appears to be a brute force attack'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4625 ANDsource ='Security' ANDremote_addressISNOTNULL ANDremote_addressNOTLIKE'127.%.%.%' ANDremote_addressNOTIN('0.0.0.0',':','-',':1') ANDtime> STRFTIME('%s','NOW') - 3925 GROUPBYremote_addressHAVINGCOUNT(DISTINCTtarget_username) >= 20;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1483": {
+    "name": "T1136: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1136: windows_event_successful_logon",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of successful logon events",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.PrivilegeList')ASprivilege_list, JSON_EXTRACT(data,'$.EventData.SamAccountName')ASsam_account_name, JSON_EXTRACT(data,'$.EventData.DisplayName')ASdisplay_name, JSON_EXTRACT(data,'$.EventData.UserPrincipalName')ASuser_principal_name, JSON_EXTRACT(data,'$.EventData.HomeDirectory')AShome_directory, JSON_EXTRACT(data,'$.EventData.HomePath')AShome_path, JSON_EXTRACT(data,'$.EventData.ScriptPath')ASscript_path, JSON_EXTRACT(data,'$.EventData.ProfilePath')ASprofile_path, JSON_EXTRACT(data,'$.EventData.UserWorkstations')ASuser_workstations, JSON_EXTRACT(data,'$.EventData.AccountExpires')ASaccount_expires, JSON_EXTRACT(data,'$.EventData.AllowedToDelegateTo')ASallowed_to_delegate_to, JSON_EXTRACT(data,'$.EventData.UserAccountControl')ASuac, JSON_EXTRACT(data,'$.EventData.UserParameters')ASuser_parameters, 'A user account was created.'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4720 ANDsource ='Security' ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1525": {
+    "name": "T1531: Impact",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1531: windows_event_user_account_deleted",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of user account deleted events",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.PrivilegeList')ASprivilege_list, 'A user account was deleted.'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4726 ANDsource ='Security' ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1562": {
+    "name": "T1499: Impact",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1499: windows_event_dos_attack_detected",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of dos attack detected events",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.Type')AStype, 'The Windows Filtering Platform has detected a DoS attack and entered a defensive mode.'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 5148 ANDsource ='Security' ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1589": {
+    "name": "T1003: Credential Access",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1003.001: windows_event_disallowed_credentials",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of disallowed credentials events",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.Package')ASpackage, JSON_EXTRACT(data,'$.EventData.UserUPN')ASuser_upn, JSON_EXTRACT(data,'$.EventData.TargetServer')AStarget_server, JSON_EXTRACT(data,'$.EventData.CredType')AScred_type, 'The requested credentials delegation was disallowed by policy.'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 5378 ANDsource ='Security' ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1618": {
+    "name": "T1592: Reconnaissance",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1592: host_sensor_system_info ",
+        "OperatingSystem": "Windows, Mac, Linux",
+        "Description": "Get host sensor system information. ",
+        "Query": "SELECT hardware_vendor, hardware_model, hardware_serial, physical_memory, cpu_physical_cores, cpu_brand FROMsystem_info;",
+        "Frequency": "3600 Seconds "
+      }
+    ]
+  },
+  "1651": {
+    "name": "T1049: Discovery",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1049: network_interfaces ",
+        "OperatingSystem": "Windows, Mac, Linux",
+        "Description": "Report all the ip addresses on attached network interfaces. ",
+        "Query": "SELECTinterface_details.mtu, interface_details.interface, interface_details.mac, interface_addresses.mask, interface_addresses.address, interface_addresses.broadcast, interface_details.ibytes, interface_details.obytesFROMinterface_addressesJOINinterface_detailsONinterface_addresses.interface = interface_details.interface;",
+        "Frequency": "43200 Seconds "
+      }
+    ]
+  },
+  "1671": {
+    "name": "T1557: Credential Access",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1557: arp_cache ",
+        "OperatingSystem": "Windows, Mac, Linux",
+        "Description": " Retrieves cached ARP replies to enumerate layer-2 network neighbors. ",
+        "Query": "SELECTaddress,mac,interfaceFROMarp_cache;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1700": {
+    "name": "T1518: Discovery",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1581.001: pending_windows_updates_patch",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves all the pending updates from the Windows Update Service. ",
+        "Query": "SELECTtitle,support_url,msrc_severity,installed,mandatory,size,kbarticleAShotfix_idFROMwin_updateWHEREinstalled ='false';",
+        "Frequency": "43200 Seconds"
+      }
+    ]
+  },
+  "1740": {
+    "name": "T1548: Privlege Escalation",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1548: vulnerability_app_compatibility ",
+        "OperatingSystem": "Windows",
+        "Description": "Applications with special compatibility set for an executable ",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'os_compatibility_target', data )ASanalysis FROMregistry WHERE(key='HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers' ORkey='HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers');",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1798": {
+    "name": "T1210: Lateral Movement",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1210: windows_event_netlogon_cve",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of CVE-2020-1472 Netlogon Remote Protocol events",
+        "Query": "SELECT eventid, dataASevent_data, CASE WHENeventidIN(5827,5828)THEN\"A vulnerable Netlogon secure channel connection from a machine account is denied\"WHENeventid = 5829THEN\"A vulnerable Netlogon secure channel connection is allowed\"WHENeventidIN(5830,5831)THEN\"A vulnerable Netlogon secure channel machine account connection is allowed by 'Domain controller: Allow vulnerable Netlogon secure channel connections' group policy\"ENDASdescription, provider_name, source FROMsophos_windows_events WHEREeventidIN(5827, 5828, 5829, 5830, 5831) ANDtime> STRFTIME('%s','NOW') - 1225;",
+        "Frequency": "900 Seconds"
+      }
+    ]
+  },
+  "1841": {
+    "name": "T1098: Persistance",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1098: windows_event_dsrm_account_password_change_attempt_dc",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of events indicating DSRM account password change attempt.",
+        "Frequency": "600 Seconds",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectLogonId')ASsubject_logon_id, JSON_EXTRACT(data,'$.EventData.UserPrincipalName')ASuser_principal_name, JSON_EXTRACT(data,'$.EventData.PrivilegeList')ASprivilege_list, JSON_EXTRACT(data,'$.EventData.SamAccountName')ASsam_account_name, JSON_EXTRACT(data,'$.EventData.DisplayName')ASdisplay_name, JSON_EXTRACT(data,'$.EventData.HomeDirectory')AShome_directory, JSON_EXTRACT(data,'$.EventData.HomePath')AShome_path, JSON_EXTRACT(data,'$.EventData.ScriptPath')ASscript_path, JSON_EXTRACT(data,'$.EventData.ProfilePath')ASprofile_path, JSON_EXTRACT(data,'$.EventData.UserWorkstations')ASuser_workstations, JSON_EXTRACT(data,'$.EventData.AccountExpires')ASaccount_expires, JSON_EXTRACT(data,'$.EventData.AllowedToDelegateTo')ASallowed_to_delegate_to, JSON_EXTRACT(data,'$.EventData.UserAccountControl')ASuac, JSON_EXTRACT(data,'$.EventData.UserParameters')ASuser_parameters, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.PasswordLastSet')ASpassword_last_set, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, 'A User Account was changed'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4738 ANDsource ='Security' ANDtime> STRFTIME('%s','NOW') - 3925;"
+      }
+    ]
+  },
+  "1897": {
+    "name": "T1212: Credential Access",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1212: windows_event_successful_logon",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of successful logon events",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1926": {
+    "name": "T1021: Lateral Movement",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1021.001: windows_event_invalid_logon_brute_force",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of brute force events",
+        "Frequency": "3600 Seconds",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.Status')ASstatus, JSON_EXTRACT(data,'$.EventData.FailureReason')ASfailure_reason, JSON_EXTRACT(data,'$.EventData.SubStatus')ASsub_status, JSON_EXTRACT(data,'$.EventData.LogonType')ASlogon_type, JSON_EXTRACT(data,'$.EventData.LogonProcessName')ASlogon_process, JSON_EXTRACT(data,'$.EventData.AuthenticationPackageName')ASauthentication_package, JSON_EXTRACT(data,'$.EventData.TransmittedServices')AStransmitted_services, JSON_EXTRACT(data,'$.EventData.KeyLength')ASkey_length, JSON_EXTRACT(data,'$.EventData.ProcessName')ASname, JSON_EXTRACT(data,'$.EventData.IpAddress')ASremote_address, JSON_EXTRACT(data,'$.EventData.IpPort')ASremote_port, 'Source IP is shuffling through 20 or more different usernames, appears to be a brute force attack'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4625 ANDsource ='Security' ANDremote_addressISNOTNULL ANDremote_addressNOTLIKE'127.%.%.%' ANDremote_addressNOTIN('0.0.0.0',':','-',':1') ANDtime> STRFTIME('%s','NOW') - 3925 GROUPBYremote_addressHAVINGCOUNT(DISTINCTtarget_username) >= 20;"
+      }
+    ]
+  },
+  "1927": {
+    "name": "T1021: Lateral Movement",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1021.002: windows_event_invalid_logon_brute_force",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of brute force events",
+        "Frequency": "3600 Seconds",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.Status')ASstatus, JSON_EXTRACT(data,'$.EventData.FailureReason')ASfailure_reason, JSON_EXTRACT(data,'$.EventData.SubStatus')ASsub_status, JSON_EXTRACT(data,'$.EventData.LogonType')ASlogon_type, JSON_EXTRACT(data,'$.EventData.LogonProcessName')ASlogon_process, JSON_EXTRACT(data,'$.EventData.AuthenticationPackageName')ASauthentication_package, JSON_EXTRACT(data,'$.EventData.TransmittedServices')AStransmitted_services, JSON_EXTRACT(data,'$.EventData.KeyLength')ASkey_length, JSON_EXTRACT(data,'$.EventData.ProcessName')ASname, JSON_EXTRACT(data,'$.EventData.IpAddress')ASremote_address, JSON_EXTRACT(data,'$.EventData.IpPort')ASremote_port, 'Source IP is shuffling through 20 or more different usernames, appears to be a brute force attack'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4625 ANDsource ='Security' ANDremote_addressISNOTNULL ANDremote_addressNOTLIKE'127.%.%.%' ANDremote_addressNOTIN('0.0.0.0',':','-',':1') ANDtime> STRFTIME('%s','NOW') - 3925 GROUPBYremote_addressHAVINGCOUNT(DISTINCTtarget_username) >= 20;"
+      }
+    ]
+  },
+  "1928": {
+    "name": "T1021: Lateral Movement",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1021.003: windows_event_invalid_logon_brute_force",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of brute force events",
+        "Frequency": "3600 Seconds",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.Status')ASstatus, JSON_EXTRACT(data,'$.EventData.FailureReason')ASfailure_reason, JSON_EXTRACT(data,'$.EventData.SubStatus')ASsub_status, JSON_EXTRACT(data,'$.EventData.LogonType')ASlogon_type, JSON_EXTRACT(data,'$.EventData.LogonProcessName')ASlogon_process, JSON_EXTRACT(data,'$.EventData.AuthenticationPackageName')ASauthentication_package, JSON_EXTRACT(data,'$.EventData.TransmittedServices')AStransmitted_services, JSON_EXTRACT(data,'$.EventData.KeyLength')ASkey_length, JSON_EXTRACT(data,'$.EventData.ProcessName')ASname, JSON_EXTRACT(data,'$.EventData.IpAddress')ASremote_address, JSON_EXTRACT(data,'$.EventData.IpPort')ASremote_port, 'Source IP is shuffling through 20 or more different usernames, appears to be a brute force attack'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4625 ANDsource ='Security' ANDremote_addressISNOTNULL ANDremote_addressNOTLIKE'127.%.%.%' ANDremote_addressNOTIN('0.0.0.0',':','-',':1') ANDtime> STRFTIME('%s','NOW') - 3925 GROUPBYremote_addressHAVINGCOUNT(DISTINCTtarget_username) >= 20;"
+      }
+    ]
+  },
+  "1929": {
+    "name": "T1021: Lateral Movement",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1021.004: windows_event_invalid_logon_brute_force",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of brute force events",
+        "Frequency": "3600 Seconds",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.Status')ASstatus, JSON_EXTRACT(data,'$.EventData.FailureReason')ASfailure_reason, JSON_EXTRACT(data,'$.EventData.SubStatus')ASsub_status, JSON_EXTRACT(data,'$.EventData.LogonType')ASlogon_type, JSON_EXTRACT(data,'$.EventData.LogonProcessName')ASlogon_process, JSON_EXTRACT(data,'$.EventData.AuthenticationPackageName')ASauthentication_package, JSON_EXTRACT(data,'$.EventData.TransmittedServices')AStransmitted_services, JSON_EXTRACT(data,'$.EventData.KeyLength')ASkey_length, JSON_EXTRACT(data,'$.EventData.ProcessName')ASname, JSON_EXTRACT(data,'$.EventData.IpAddress')ASremote_address, JSON_EXTRACT(data,'$.EventData.IpPort')ASremote_port, 'Source IP is shuffling through 20 or more different usernames, appears to be a brute force attack'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4625 ANDsource ='Security' ANDremote_addressISNOTNULL ANDremote_addressNOTLIKE'127.%.%.%' ANDremote_addressNOTIN('0.0.0.0',':','-',':1') ANDtime> STRFTIME('%s','NOW') - 3925 GROUPBYremote_addressHAVINGCOUNT(DISTINCTtarget_username) >= 20;"
+      }
+    ]
+  },
+  "1930": {
+    "name": "T1021: Lateral Movement",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1021.006: windows_event_invalid_logon_brute_force",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of brute force events",
+        "Frequency": "3600 Seconds",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TargetUserName')AStarget_username, JSON_EXTRACT(data,'$.EventData.TargetDomainName')AStarget_domain, JSON_EXTRACT(data,'$.EventData.Status')ASstatus, JSON_EXTRACT(data,'$.EventData.FailureReason')ASfailure_reason, JSON_EXTRACT(data,'$.EventData.SubStatus')ASsub_status, JSON_EXTRACT(data,'$.EventData.LogonType')ASlogon_type, JSON_EXTRACT(data,'$.EventData.LogonProcessName')ASlogon_process, JSON_EXTRACT(data,'$.EventData.AuthenticationPackageName')ASauthentication_package, JSON_EXTRACT(data,'$.EventData.TransmittedServices')AStransmitted_services, JSON_EXTRACT(data,'$.EventData.KeyLength')ASkey_length, JSON_EXTRACT(data,'$.EventData.ProcessName')ASname, JSON_EXTRACT(data,'$.EventData.IpAddress')ASremote_address, JSON_EXTRACT(data,'$.EventData.IpPort')ASremote_port, 'Source IP is shuffling through 20 or more different usernames, appears to be a brute force attack'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4625 ANDsource ='Security' ANDremote_addressISNOTNULL ANDremote_addressNOTLIKE'127.%.%.%' ANDremote_addressNOTIN('0.0.0.0',':','-',':1') ANDtime> STRFTIME('%s','NOW') - 3925 GROUPBYremote_addressHAVINGCOUNT(DISTINCTtarget_username) >= 20;"
+      }
+    ]
+  },
+  "1959": {
+    "name": "T1563: Lateral Movement",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1563: windows_event_successful_logon",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of successful logon events",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "1982": {
+    "name": "T1133: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1133: windows_event_successful_logon",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of successful logon events",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2014": {
+    "name": "T1505: Persistence ",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1505: windows_event_successful_logon",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of successful logon events",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2046": {
+    "name": "T1078: Defense Evasion ",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1078.001: user_events_linux",
+        "OperatingSystem": "Linux",
+        "Description": "Retrieves the user login events from the target system.",
+        "Frequency": "43200 Seconds",
+        "Query": "SELECTuid, pid, message, type, path, address, terminal,timeFROMuser_eventsWHEREterminal !=\"cron\"ANDpid != 1;"
+      }
+    ]
+  },
+  "2113": {
+    "name": "T1078: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1078.002: user_events_linux",
+        "OperatingSystem": "Linux",
+        "Description": "Retrieves the user login events from the target system.",
+        "Frequency": "43200 Seconds",
+        "Query": "SELECTuid, pid, message, type, path, address, terminal,timeFROMuser_eventsWHEREterminal !=\"cron\"ANDpid != 1;"
+      }
+    ]
+  },
+  "2185": {
+    "name": "T1078: Privilege Escalation",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1078.003: user_events_linux",
+        "OperatingSystem": "Linux",
+        "Description": "Retrieves the user login events from the target system.",
+        "Frequency": "43200 Seconds",
+        "Query": "SELECTuid, pid, message, type, path, address, terminal,timeFROMuser_eventsWHEREterminal !=\"cron\"ANDpid != 1;"
+      }
+    ]
+  },
+  "2251": {
+    "name": "T1548: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1548: vulnerability_app_compatibility ",
+        "OperatingSystem": "Windows",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'os_compatibility_target', data )ASanalysis FROMregistry WHERE(key='HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers' ORkey='HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers');",
+        "Frequency": "3600 Seconds",
+        "Description": "Applications with special compatibility set for an executable "
+      }
+    ]
+  },
+  "2309": {
+    "name": "T1112: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1112: ioc_windows_registry_malware_sdbot",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a registry key used by sdbot malware persistence mechanism.",
+        "Query": "SELECTDISTINCT srj.timeASevent_timestamp, srj.keyName, srj.value, srj.eventType, srj.sophosPID, srj.valueName, 'REG_BINARY'ASvalueType, 'SDBbot Remote Access Trojan stores the RAT component in the registry and establishes persistence for the loader component.'ASdescription FROMsophos_registry_journalASsrj WHEREsrj.keyNameLIKE\"\\REGISTRY\\MACHINE\\SOFTWARE\\Microsoft\\___\"ANDsrj.time> STRFTIME(\"%s\",\"NOW\") - 925 ANDlower(srj.valueName) = srj.valueName ANDLENGTH(srj.valueName) = 1 -- valueType=3 is Binary ANDsrj.valueType = 3 -- eventType=5 is valueSet ANDsrj.eventType = 5;",
+        "Frequency": "600 Seconds"
+      }
+    ]
+  },
+  "2343": {
+    "name": "T1569: Execution",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1569.002: windows_event_new_service_installed",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of new services installed on the system.",
+        "Query": "SELECT DISTINCT eventid, JSON_EXTRACT(data, '$.EventData.ServiceName') AS service_name, JSON_EXTRACT(data, '$.EventData.ImagePath') AS image_path, JSON_EXTRACT(data, '$.EventData.ServiceType') AS service_type, JSON_EXTRACT(data, '$.EventData.StartType') AS start_type, JSON_EXTRACT(data, '$.EventData.AccountName') AS account_name, 'A new Service was Installed on the System' AS description, provider_name, source FROM sophos_windows_events WHERE eventid = 7045 AND source = 'System' AND time > STRFTIME('%s', 'NOW') - 3925;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2367": {
+    "name": "T1543: Privilege Escalation",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1543: vulnerability_kernel_null_page_access ",
+        "OperatingSystem": "Windows",
+        "Description": "Kernel Null page access is allowed ",
+        "Frequency": "3600 Seconds",
+        "Query": "SELECT  key,  path,  name,  type,  data,  mtime,  JSON_OBJECT(   'kernel_null_page_access_allowed', data = 1 ) AS analysis FROM registry WHEREkey = 'HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management' AND name ='EnableLowVaAccess' AND data = 1;"
+      }
+    ]
+  },
+  "2423": {
+    "name": "T1113:4 Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1134.005: windows_event_sid_history_failed_adding_to_account_dc",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of events indicating SID history failed adding for an account.",
+        "Frequency": "600 Seconds"
+      }
+    ]
+  },
+  "2462": {
+    "name": "T1134: Privilege Escalation",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1134.005: windows_event_sid_history_failed_adding_to_account_dc",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of events indicating SID history failed adding for an account.",
+        "Frequency": "600 Seconds"
+      }
+    ]
+  },
+  "2498": {
+    "name": "T1087: Discovery",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1087: vulnerability_solarwinds ",
+        "OperatingSystem": "Windows",
+        "Description": "Indicated vulnerable solarwinds installation. ",
+        "Query": "SELECT uid, gid, username, description, directory, shell, type, uuid FROMusers;",
+        "Frequency": "24 Hours"
+      }
+    ]
+  },
+  "2536": {
+    "name": "T1590: Reconaissance",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1590: arp_cache ",
+        "OperatingSystem": "Windows, Mac, Linux",
+        "Description": "Retrieves cached ARP replies to enumerate layer-2 network neighbors. ",
+        "Query": "SELECTaddress,mac,interfaceFROMarp_cache;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2589": {
+    "name": "1598 Reconaissance",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1598.001: windows_disk_md5 ",
+        "OperatingSystem": "Windows",
+        "Description": "Return hashes of binaries running from Downloads folder. ",
+        "Query": "SELECT file.filename, file.ctime, file.path, sfp.sha1, sfp.sha256, sfp.fileSize, sfp.mlScore, sfp.mlScoreData, sfp.puaScore, sfp.globalRep, sfp.globalRepData, sfp.localRep, sfp.localRepData, sfp.coreFileInfo FROMfile LEFTJOINsophos_file_propertiesASsfpONfile.path = sfp.pathname WHERE( file.pathLIKE'C:\\Users\\%\\Downloads\\%%'OR file.pathLIKE'C:\\Users\\%\\Desktop\\%%'OR file.pathLIKE'C:\\Users\\%\\Appdata\\Roaming\\%%'OR file.pathLIKE'C:\\Users\\%\\Appdata\\Local\\Temp\\%%'OR file.pathLIKE'C:\\Windows\\Temp\\%%' )AND( file.filenameLIKE'%.exe'OR file.filenameLIKE'%.dll'OR file.filenameLIKE'%.ps1' );",
+        "Frequency": "14400 Seconds"
+      }
+    ]
+  },
+  "2622": {
+    "name": "T1600: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1600: vulnerability_weak_algorithms ",
+        "OperatingSystem": "Windows",
+        "Description": "Determine if Windows is configured to log certificates with weak crypto (https",
+        "Query": "SELECT*FROMregistryWHEREpathLIKE'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography\\OID\\EncodingType 0\\CertDllCreateCertificateChainEngine\\Config\\Default\\%'ANDnameIN('WeakSha1ThirdPartyFlags','WeakMd5ThirdPartyFlags')ANDtype ='REG_DWORD'ANDdataNOTLIKE'-2%';",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2642": {
+    "name": "T1203: Execution",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1203: vulnerability_app_mitigation_options ",
+        "OperatingSystem": "Windows",
+        "Description": "Special exceptions for MitigationOptions - (https",
+        "Query": "SELECT*FROMregistryWHEREpathLIKE'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\%'ANDname='DisableATMFD'ANDdata !='1';",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2676": {
+    "name": "T055 Defense Evasaion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1055: vulnerability_dep ",
+        "OperatingSystem": "Windows",
+        "Description": "DEP is not Admin Opt-out or Always-on - (http",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'dep_opt_out', dataLIKE'%NOEXECUTE=OPTOUT%', 'dep_alwayson', dataLIKE'%NOEXECUTE=ALWAYSON%', 'dep_opt_in', dataLIKE'%NOEXECUTE=OPTIN%' )ASanalysis FROMregistry WHEREkey='HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control' ANDname='SystemStartOptions' ANDdataNOTLIKE'%NOEXECUTE=ALWAYSON%' ANDdataNOTLIKE'%NOEXECUTE=OPTOUT%';",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2698": {
+    "name": "1055 Privilege",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1484: Domain Policy Modification",
+        "OperatingSystem": "Windows",
+        "Description": "DEP is not Admin Opt-out or Always-on - (http",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'dep_opt_out', dataLIKE'%NOEXECUTE=OPTOUT%', 'dep_alwayson', dataLIKE'%NOEXECUTE=ALWAYSON%', 'dep_opt_in', dataLIKE'%NOEXECUTE=OPTIN%' )ASanalysis FROMregistry WHEREkey='HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control' ANDname='SystemStartOptions' ANDdataNOTLIKE'%NOEXECUTE=ALWAYSON%' ANDdataNOTLIKE'%NOEXECUTE=OPTOUT%';",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2724": {
+    "name": "T1027: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1027: vulnerability_app_disabled_exception_chain_validation ",
+        "OperatingSystem": "Windows",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'exception_chain_validation_disabled', data != 0 )ASanalysis FROMregistry WHERE(keyLIKE'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\%' ORkeyLIKE'HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Image File Execution Options\\%') ANDname='DisableExceptionChainValidation' ANDdata != 0;",
+        "Frequency": "3600 Seconds",
+        "Description": "Applications avoiding SEHOP. Anything other than 0 will disable Exception Chain Validation for this specific file. Seems to be disabled for a number of windows apps "
+      }
+    ]
+  },
+  "2766": {
+    "name": "1553 Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1553: vulnerability_certificate_padding ",
+        "OperatingSystem": "Windows",
+        "Description": "Certificate Padding is disabled - (https",
+        "Query": "SELECT  key,  path,  name,  type,  data,  mtime,  JSON_OBJECT(   'certificate_padding_disabled', data != 1 ) AS analysis FROM registry WHERE (key='HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography\\WinTrust\\Config' OR key ='HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Microsoft\\Cryptography\\WinTrust\\Config') AND name ='EnableCertPaddingCheck' ANDdata != 1;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2790": {
+    "name": "T1053: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1053: windows_event_scheduled_task_created ",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of scheduled task created events ",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TaskName')AStask_name, JSON_EXTRACT(data,'$.EventData.TaskContent')AStask_content, 'A scheduled task was created.'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4698 ANDsource ='Security' ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2811": {
+    "name": "T1189: Initial Access",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1189: vulnerability_app_mitigation_options ",
+        "OperatingSystem": "Windows",
+        "Description": "Special exceptions for MitigationOptions - (https",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2834": {
+    "name": "1059 Execution",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1059: vulnerability_app_mitigation_options ",
+        "OperatingSystem": "Windows",
+        "Description": "Special exceptions for MitigationOptions - (https",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2858": {
+    "name": "1053 Privilege Escalation",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1484: Domain Policy Modification",
+        "OperatingSystem": "Windows",
+        "Description": "Retrieves a list of scheduled task created events ",
+        "Query": "SELECT eventid, JSON_EXTRACT(data,'$.EventData.SubjectUserName')ASsubject_username, JSON_EXTRACT(data,'$.EventData.SubjectDomainName')ASsubject_domain, JSON_EXTRACT(data,'$.EventData.TaskName')AStask_name, JSON_EXTRACT(data,'$.EventData.TaskContent')AStask_content, 'A scheduled task was created.'ASdescription, provider_name, source FROMsophos_windows_events WHEREeventid = 4698 ANDsource ='Security' ANDtime> STRFTIME('%s','NOW') - 3925;",
+        "Frequency": "3600 Seconds"
+      }
+    ]
+  },
+  "2884": {
+    "name": "T1127: Defense Evasion",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1127: vulnerability_developer_mode ",
+        "OperatingSystem": "Windows",
+        "Description": "Developer mode enabled ",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'developer_mode_enabled', data = 1 )ASanalysis FROMregistry WHEREkeyLIKE'HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock' ANDname='AllowDevelopmentWithoutDevLicense' ANDdata = 1;",
+        "Frequency": "60 Minutes"
+      }
+    ]
+  },
+  "2906": {
+    "name": "T1137: Persistence",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1137: vulnerability_outlook_flags ",
+        "OperatingSystem": "Windows",
+        "Description": "Check if specific Outlook security patches have been disabled (https",
+        "Query": "SELECT key, path, name, type, data, mtime, JSON_OBJECT( 'outlook_security_key',name, 'outlook_security_value', data = 1 )ASanalysis FROMregistry WHERE -- Due to osquery globbing limitations, we need to split the path query into two parts. -- Ideally we could use something like: key LIKE `HKEY_USERS\\%\\SOFTWARE\\Microsoft\\Office\\%\\Outlook\\Security\\%` -- The inner query grabs everything up to the Office version `...\\Office\\16.0` and appends '\\Outlook\\Security' -- The outer query pulls in the rest of the path -- IMPORTANT NOTE:https://github.com/osquery/osquery/pull/6448will potentially impact this functionality. Need to keep an eye out for whenever this patch makes it to a release keyIN(SELECTpath ||'\\Outlook\\Security'FROMregistryWHEREpathLIKE'HKEY_USERS\\%\\SOFTWARE\\Microsoft\\Office\\%') ANDnameIN('EnableRoamingFolderHomepages','NonDefaultStoreScript','EnableUnsafeClientMailRules') AND( (name='EnableRoamingFolderHomepages'ANDdata = 1)OR (name='NonDefaultStoreScript'ANDdata = 1)OR (name='EnableUnsafeClientMailRules'ANDdata = 1) );",
+        "Frequency": "60 Minutes"
+      }
+    ]
+  },
+  "2933": {
+    "name": "T1587: Resource Development",
+    "subtechniques": [
+      {
+        "TechniqueID": "T1588: Obtain Capabilities",
+        "OperatingSystem": "Windows",
+        "Description": "Indicated vulnerable solarwinds installation. ",
+        "Query": "SELECT path, directory, filename, inode, uid, gid, mode, size, atime, mtime, ctime, btime, hard_links, symlink, type, attributes, product_version FROM file WHERE ( file.pathLIKE\"C:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"D:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"E:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"F:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"G:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"H:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"I:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"J:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"K:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"L:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"M:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"N:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"O:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"P:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Q:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"R:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"S:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"T:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"U:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"V:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"W:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"X:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Y:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\"OR file.pathLIKE\"Z:\\%%\\SolarWinds.Orion.Core.BusinessLayer.dll\") AND ( file.product_versionIN( \"2020.2.5300.12432\", \"2020.2.5200.12394\", \"2020.4.100.478\", \"2020.2.100.11831\", \"2020.2.100.12219\", \"2019.4.5200.9083\") );rocess",
+        "Frequency": "24 Hours"
+      }
+    ]
+  },
+  "2953": {
+    "name": "Page 53",
+    "subtechniques": []
+  }
+}

@@ -29,8 +29,8 @@ app.use(errorHandler.handleError);
 /**
  * Add routes
  */
- router.use('/populate', populate);
 router.use('/health', health);
+router.use('/populate', populate);
 router.use(authHandler.authenticateUser);
 
 module.exports = router;

@@ -52,6 +52,9 @@ const Subtechnique = sequelize.define('matrix_subtechnique', {
     query_title: {
         type: DataTypes.STRING(400),
     },
+    has_count: {
+        type: DataTypes.BOOLEAN,
+    }
   }, {
     freezeTableName: true,
     timestamps: false
