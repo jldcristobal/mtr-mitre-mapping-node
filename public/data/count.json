@@ -54,7 +54,7 @@
       "T1053.005": {
         "name": "Scheduled Task",
         "url": "https://attack.mitre.org/techniques/T1053/005",
-        "count": 3
+        "count": 4
       },
       "T1546.007": {
         "name": "Netsh Helper DLL",
@@ -360,7 +360,7 @@
       "T1036": {
         "name": "Masquerading",
         "url": "https://attack.mitre.org/techniques/T1036",
-        "count": 17
+        "count": 18
       },
       "T1036.003": {
         "name": "Rename System Utilities",
@@ -415,7 +415,7 @@
       "T1562.001": {
         "name": "Disable or Modify Tools",
         "url": "https://attack.mitre.org/techniques/T1562/001",
-        "count": 22
+        "count": 23
       },
       "T1216": {
         "name": "Signed Script Proxy Execution",
@@ -455,7 +455,7 @@
       "T1036.004": {
         "name": "Masquerade Task or Service",
         "url": "https://attack.mitre.org/techniques/T1036/004",
-        "count": 2
+        "count": 3
       },
       "T1218.005": {
         "name": "Mshta",
@@ -713,7 +713,7 @@
       "T1021.002": {
         "name": "SMB/Windows Admin Shares",
         "url": "https://attack.mitre.org/techniques/T1021/002",
-        "count": 5
+        "count": 7
       },
       "T1021.001": {
         "name": "Remote Desktop Protocol",
@@ -839,10 +839,15 @@
         "url": "https://attack.mitre.org/techniques/T1133",
         "count": 29
       },
+      "T1566.001": {
+        "name": "Spearphishing Attachment",
+        "url": "https://attack.mitre.org/techniques/T1566/001",
+        "count": 1
+      },
       "T1190": {
         "name": "Exploit Public-Facing Application",
         "url": "https://attack.mitre.org/techniques/T1190",
-        "count": 27
+        "count": 28
       },
       "T1195": {
         "name": "Supply Chain Compromise",
@@ -1126,7 +1131,7 @@
       "T1548": {
         "name": "Abuse Elevation Control Mechanism",
         "url": "https://attack.mitre.org/techniques/T1548",
-        "count": 3
+        "count": 5
       },
       "T1546": {
         "name": "Event Triggered Execution",
@@ -1305,7 +1310,7 @@
       "T1059.001": {
         "name": "PowerShell",
         "url": "https://attack.mitre.org/techniques/T1059/001",
-        "count": 57
+        "count": 58
       },
       "T1569.002": {
         "name": "Service Execution",
@@ -1315,22 +1320,22 @@
       "T1059.003": {
         "name": "Windows Command Shell",
         "url": "https://attack.mitre.org/techniques/T1059/003",
-        "count": 13
+        "count": 14
+      },
+      "T1204.002": {
+        "name": "Malicious File",
+        "url": "https://attack.mitre.org/techniques/T1204/002",
+        "count": 14
       },
       "T1047": {
         "name": "Windows Management Instrumentation",
         "url": "https://attack.mitre.org/techniques/T1047",
-        "count": 15
+        "count": 17
       },
       "T1059.005": {
         "name": "Visual Basic",
         "url": "https://attack.mitre.org/techniques/T1059/005",
         "count": 2
-      },
-      "T1204.002": {
-        "name": "Malicious File",
-        "url": "https://attack.mitre.org/techniques/T1204/002",
-        "count": 12
       },
       "T1059": {
         "name": "Command and Scripting Interpreter",
@@ -1340,7 +1345,7 @@
       "T1053.005": {
         "name": "Scheduled Task",
         "url": "https://attack.mitre.org/techniques/T1053/005",
-        "count": 4
+        "count": 5
       },
       "T1059.002": {
         "name": "AppleScript",
@@ -1350,7 +1355,7 @@
       "T1203": {
         "name": "Exploitation for Client Execution",
         "url": "https://attack.mitre.org/techniques/T1203",
-        "count": 3
+        "count": 4
       },
       "T1059.006": {
         "name": "Python",
