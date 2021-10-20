@@ -17,9 +17,8 @@ const Subtechnique = require('./models/subtechniques')
 const SubtechniqueTactic = require('./models/subtechniqueTactic');
 const SubtechniquePlatform = require('./models/subtechniquePlatform');
 const SubtechniqueDataSource = require('./models/subtechniqueDataSource');
+const Query = require('./models/query')
 const QueryPlatform = require('./models/queryPlatform');
-const TechniqueQueryPlatform = require('./models/techniqueQueryPlatform');
-const SubtechniqueQueryPlatform = require('./models/subtechniqueQueryPlatform');
 const Count = require('./models/count')
 
 // const logger = log4js.getLogger('controllers - accessToken');
@@ -237,71 +236,52 @@ populate.query = async (req, res) => {
                     query_title: subtechniques.TechniqueID,
                     query_description: subtechniques.Description,
                     query_text: subtechniques.Query,
-                    query_frequency: subtechniques.Frequency
+                    query_frequency: subtechniques.Frequency,
+                    query_platform: subtechniques.OperatingSystem
                 })
+
                 if(subtechniques.Query) subtechniques.Query.trim()
+
                 // add to matrix query
                 let technique = subtechniques.TechniqueID.slice(0, 5)
                 let subtechnique 
                 if(subtechniques.TechniqueID.includes('.00')) {
                     subtechnique = subtechniques.TechniqueID.split(':')[0] 
 
-                    // insert query in subtechniques table
+                    // update subtechniques table
                     await Subtechnique.update(
-                        {
-                            query_title: subtechniques.TechniqueID.trim(),
-                            query_description: subtechniques.Description.trim(),
-                            query_text: subtechniques.Query,
-                            query_frequency: subtechniques.Frequency.trim()
-                        },
+                        { has_query: true }, 
                         { where: {sub_technique_id: subtechnique}}
                     )
-
-                    // add to matrix query platform
-                    if(subtechniques.OperatingSystem) {
-                        let platformList = subtechniques.OperatingSystem.split(', ')
-                        await platformList.forEach(async (p) => {
-                            //insert platform if not existing
-                            await QueryPlatform.findOrCreate({
-                                where: {platform_name: p}
-                            })
-            
-                            let mqp = {
-                                subtechnique_id: subtechnique,
-                                qplatform_id: p
-                            }
-                            await SubtechniqueQueryPlatform.create(mqp)
-                        })
-                    }
                 } else {
                     // insert query in techniques table
                     await Technique.update(
-                        {
-                            query_title: subtechniques.TechniqueID.trim(),
-                            query_description: subtechniques.Description.trim(),
-                            query_text: subtechniques.Query,
-                            query_frequency: subtechniques.Frequency.trim()
-                        },
+                        { has_query: true },
                         { where: {technique_id: technique.trim()}}
                     )
-
-                    // add to matrix query platform
-                    if(subtechniques.OperatingSystem) {
-                        let platformList = subtechniques.OperatingSystem.split(', ')
-                        await platformList.forEach(async (p) => {
-                            //insert platform if not existing
-                            await QueryPlatform.findOrCreate({
-                                where: {platform_name: p}
-                            })
-            
-                            let mqp = {
-                                technique_id: technique,
-                                qplatform_id: p
-                            }
-                            await TechniqueQueryPlatform.create(mqp)
-                        })
-                    }
                 }
+
+                // insert to matrix_query table
+                const query = await Query.create({
+                    query_title: subtechniques.TechniqueID,
+                    query_description: subtechniques.Description,
+                    query_text: subtechniques.Query,
+                    query_frequency: subtechniques.Frequency,
+                    sub_technique_name_id: subtechnique,
+                    technique_name_id: technique.trim()
+                })
+
+                // add to matrix query platform
+                if(subtechniques.OperatingSystem) {
+                    let platformList = subtechniques.OperatingSystem.split(', ')
+                    await platformList.forEach(async (platform) => {
+                        //insert platform if not existing
+                        await QueryPlatform.create({
+                            query_id: query.id,
+                            platform_id: platform
+                        })
+                    })
+                }                
             }
         })
 

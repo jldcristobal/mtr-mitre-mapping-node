@@ -40,19 +40,10 @@ const Subtechnique = sequelize.define('matrix_subtechnique', {
         type: DataTypes.STRING(100),
         allowNull: false
     },
-    query_description: {
-        type: DataTypes.TEXT,
-    },
-    query_frequency: {
-        type: DataTypes.TEXT,
-    },
-    query_text: {
-        type: DataTypes.TEXT,
-    },
-    query_title: {
-        type: DataTypes.STRING(400),
-    },
     has_count: {
+        type: DataTypes.BOOLEAN,
+    },
+    has_query: {
         type: DataTypes.BOOLEAN,
     }
   }, {
