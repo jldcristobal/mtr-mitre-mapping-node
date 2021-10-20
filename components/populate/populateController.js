@@ -245,6 +245,8 @@ populate.query = async (req, res) => {
                 // add to matrix query
                 let technique = subtechniques.TechniqueID.slice(0, 5)
                 let subtechnique 
+                let query
+
                 if(subtechniques.TechniqueID.includes('.00')) {
                     subtechnique = subtechniques.TechniqueID.split(':')[0] 
 
@@ -253,23 +255,35 @@ populate.query = async (req, res) => {
                         { has_query: true }, 
                         { where: {sub_technique_id: subtechnique}}
                     )
+
+                    // insert to matrix_query table
+                    let addQuery = await Query.create({
+                        query_title: subtechniques.TechniqueID,
+                        query_description: subtechniques.Description,
+                        query_text: subtechniques.Query,
+                        query_frequency: subtechniques.Frequency,
+                        sub_technique_name_id: subtechnique
+                    })
+
+                    query = addQuery.id
                 } else {
                     // insert query in techniques table
                     await Technique.update(
                         { has_query: true },
                         { where: {technique_id: technique.trim()}}
                     )
-                }
 
-                // insert to matrix_query table
-                const query = await Query.create({
-                    query_title: subtechniques.TechniqueID,
-                    query_description: subtechniques.Description,
-                    query_text: subtechniques.Query,
-                    query_frequency: subtechniques.Frequency,
-                    sub_technique_name_id: subtechnique,
-                    technique_name_id: technique.trim()
-                })
+                    // insert to matrix_query table
+                    let addQuery = await Query.create({
+                        query_title: subtechniques.TechniqueID,
+                        query_description: subtechniques.Description,
+                        query_text: subtechniques.Query,
+                        query_frequency: subtechniques.Frequency,
+                        technique_name_id: technique.trim()
+                    })
+
+                    query = addQuery.id
+                }
 
                 // add to matrix query platform
                 if(subtechniques.OperatingSystem) {
@@ -277,7 +291,7 @@ populate.query = async (req, res) => {
                     await platformList.forEach(async (platform) => {
                         //insert platform if not existing
                         await QueryPlatform.create({
-                            query_id: query.id,
+                            query_id: query,
                             platform_id: platform
                         })
                     })

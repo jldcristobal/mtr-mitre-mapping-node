@@ -26,8 +26,7 @@ const Query = sequelize.define('matrix_query', {
     type: DataTypes.STRING(100)
   },
   technique_name_id: {
-    type: DataTypes.STRING(100),
-    allowNull: false
+    type: DataTypes.STRING(100)
   }
 }, {
     freezeTableName: true,
