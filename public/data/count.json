@@ -14,12 +14,12 @@
       "T1078.002": {
         "name": "Domain Accounts",
         "url": "https://attack.mitre.org/techniques/T1078/002",
-        "count": 7
+        "count": 10
       },
       "T1078.003": {
         "name": "Local Accounts",
         "url": "https://attack.mitre.org/techniques/T1078/003",
-        "count": 11
+        "count": 14
       },
       "T1543.003": {
         "name": "Windows Service",
@@ -74,7 +74,7 @@
       "T1505.003": {
         "name": "Web Shell",
         "url": "https://attack.mitre.org/techniques/T1505/003",
-        "count": 3
+        "count": 4
       },
       "T1547.004": {
         "name": "Winlogon Helper DLL",
@@ -242,7 +242,7 @@
       "T1083": {
         "name": "File and Directory Discovery",
         "url": "https://attack.mitre.org/techniques/T1083",
-        "count": 10
+        "count": 12
       },
       "T1040": {
         "name": "Network Sniffing",
@@ -267,12 +267,12 @@
       "T1046": {
         "name": "Network Service Scanning",
         "url": "https://attack.mitre.org/techniques/T1046",
-        "count": 12
+        "count": 14
       },
       "T1082": {
         "name": "System Information Discovery",
         "url": "https://attack.mitre.org/techniques/T1082",
-        "count": 16
+        "count": 18
       },
       "T1049": {
         "name": "System Network Connections Discovery",
@@ -292,7 +292,7 @@
       "T1087": {
         "name": "Account Discovery",
         "url": "https://attack.mitre.org/techniques/T1087",
-        "count": 9
+        "count": 11
       },
       "T1518.001": {
         "name": "Security Software Discovery",
@@ -327,6 +327,11 @@
       "T1120": {
         "name": "Peripheral Device Discovery",
         "url": "https://attack.mitre.org/techniques/T1120",
+        "count": 4
+      },
+      "T1135": {
+        "name": "Network Share Discovery",
+        "url": "https://attack.mitre.org/techniques/T1135",
         "count": 2
       }
     },
@@ -345,17 +350,22 @@
       "T1027": {
         "name": "Obfuscated Files or Information",
         "url": "https://attack.mitre.org/techniques/T1027",
-        "count": 13
+        "count": 15
+      },
+      "T1036.004": {
+        "name": "Masquerade Task or Service",
+        "url": "https://attack.mitre.org/techniques/T1036/004",
+        "count": 4
       },
       "T1078.002": {
         "name": "Domain Accounts",
         "url": "https://attack.mitre.org/techniques/T1078/002",
-        "count": 7
+        "count": 10
       },
       "T1078.003": {
         "name": "Local Accounts",
         "url": "https://attack.mitre.org/techniques/T1078/003",
-        "count": 11
+        "count": 14
       },
       "T1036": {
         "name": "Masquerading",
@@ -410,7 +420,7 @@
       "T1070": {
         "name": "Indicator Removal on Host",
         "url": "https://attack.mitre.org/techniques/T1070",
-        "count": 4
+        "count": 5
       },
       "T1562.001": {
         "name": "Disable or Modify Tools",
@@ -422,6 +432,11 @@
         "url": "https://attack.mitre.org/techniques/T1216",
         "count": 2
       },
+      "T1218.005": {
+        "name": "Mshta",
+        "url": "https://attack.mitre.org/techniques/T1218/005",
+        "count": 8
+      },
       "T1562.003": {
         "name": "Impair Command History Logging",
         "url": "https://attack.mitre.org/techniques/T1562/003",
@@ -430,7 +445,7 @@
       "T1218.011": {
         "name": "Rundll32",
         "url": "https://attack.mitre.org/techniques/T1218/011",
-        "count": 7
+        "count": 8
       },
       "T1112": {
         "name": "Modify Registry",
@@ -451,16 +466,6 @@
         "name": "Binary Padding",
         "url": "https://attack.mitre.org/techniques/T1027/001",
         "count": 2
-      },
-      "T1036.004": {
-        "name": "Masquerade Task or Service",
-        "url": "https://attack.mitre.org/techniques/T1036/004",
-        "count": 3
-      },
-      "T1218.005": {
-        "name": "Mshta",
-        "url": "https://attack.mitre.org/techniques/T1218/005",
-        "count": 6
       },
       "T1564": {
         "name": "Hide Artifacts",
@@ -485,12 +490,12 @@
       "T1218.010": {
         "name": "Regsvr32",
         "url": "https://attack.mitre.org/techniques/T1218/010",
-        "count": 3
+        "count": 4
       },
       "T1218": {
         "name": "Signed Binary Proxy Execution",
         "url": "https://attack.mitre.org/techniques/T1218",
-        "count": 7
+        "count": 9
       },
       "T1218.004": {
         "name": "InstallUtil",
@@ -512,6 +517,11 @@
         "url": "https://attack.mitre.org/techniques/T1548/001",
         "count": 1
       },
+      "T1070.002": {
+        "name": "Clear Linux or Mac System Logs",
+        "url": "https://attack.mitre.org/techniques/T1070/002",
+        "count": 2
+      },
       "T1108": {
         "name": "Redundant Access",
         "url": "https://attack.mitre.org/techniques/T1108",
@@ -530,7 +540,7 @@
       "T1562": {
         "name": "Impair Defenses",
         "url": "https://attack.mitre.org/techniques/T1562",
-        "count": 3
+        "count": 4
       },
       "T1548.003": {
         "name": "Sudo and Sudo Caching",
@@ -703,7 +713,7 @@
       "T1021.004": {
         "name": "SSH",
         "url": "https://attack.mitre.org/techniques/T1021/004",
-        "count": 7
+        "count": 9
       },
       "T1021.003": {
         "name": "Distributed Component Object Model",
@@ -764,7 +774,7 @@
       "T1219": {
         "name": "Remote Access Software",
         "url": "https://attack.mitre.org/techniques/T1219",
-        "count": 26
+        "count": 27
       },
       "T1095": {
         "name": "Non-Application Layer Protocol",
@@ -913,7 +923,7 @@
       "T1003.001": {
         "name": "LSASS Memory",
         "url": "https://attack.mitre.org/techniques/T1003/001",
-        "count": 16
+        "count": 18
       },
       "T1558": {
         "name": "Steal or Forge Kerberos Tickets",
@@ -1051,12 +1061,12 @@
       "T1078.002": {
         "name": "Domain Accounts",
         "url": "https://attack.mitre.org/techniques/T1078/002",
-        "count": 7
+        "count": 10
       },
       "T1078.003": {
         "name": "Local Accounts",
         "url": "https://attack.mitre.org/techniques/T1078/003",
-        "count": 11
+        "count": 14
       },
       "T1547.001": {
         "name": "Registry Run Keys / Startup Folder",
@@ -1310,7 +1320,7 @@
       "T1059.001": {
         "name": "PowerShell",
         "url": "https://attack.mitre.org/techniques/T1059/001",
-        "count": 58
+        "count": 60
       },
       "T1569.002": {
         "name": "Service Execution",
@@ -1330,17 +1340,17 @@
       "T1047": {
         "name": "Windows Management Instrumentation",
         "url": "https://attack.mitre.org/techniques/T1047",
-        "count": 17
+        "count": 18
       },
       "T1059.005": {
         "name": "Visual Basic",
         "url": "https://attack.mitre.org/techniques/T1059/005",
-        "count": 2
+        "count": 4
       },
       "T1059": {
         "name": "Command and Scripting Interpreter",
         "url": "https://attack.mitre.org/techniques/T1059",
-        "count": 36
+        "count": 39
       },
       "T1053.005": {
         "name": "Scheduled Task",
@@ -1395,6 +1405,11 @@
       "T1129": {
         "name": "Shared Modules",
         "url": "https://attack.mitre.org/techniques/T1129",
+        "count": 1
+      },
+      "T1204.001": {
+        "name": "Malicious Link",
+        "url": "https://attack.mitre.org/techniques/T1204/001",
         "count": 1
       },
       "T1053.002": {
@@ -1526,7 +1541,7 @@
       "T1489": {
         "name": "Service Stop",
         "url": "https://attack.mitre.org/techniques/T1489",
-        "count": 1
+        "count": 2
       },
       "T1529": {
         "name": "System Shutdown/Reboot",

@@ -30,12 +30,6 @@ const Subtechnique = sequelize.define('matrix_subtechnique', {
     modified: {
         type: DataTypes.DATE
     },
-    query: {
-        type: DataTypes.TEXT
-    },
-    frequency: {
-        type: DataTypes.STRING(100)
-    },
     technique_name_id: {
         type: DataTypes.STRING(100),
         allowNull: false

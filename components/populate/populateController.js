@@ -333,21 +333,26 @@ populate.count = async (req, res) => {
                 })
 
                 let t
-                let subtechnique
-                if(technique.includes('.00')) {
+                let subtechnique = null
+                if(technique.includes('.')) {
                     t = technique.slice(0, 5)
                     subtechnique = technique
 
                     await Subtechnique.update({has_count: true}, {where: {sub_technique_id: subtechnique}})
-                } else t = technique
+                } else {
+                    t = technique
+                    await Technique.update({has_count: true}, {where: {technique_id: t}})
+                }
 
-                await Count.create({
-                    tactic_name_id: value.name,
-                    technique_name_id: t,
-                    sub_technique_name_id: subtechnique,
-                    count: v.count
-                })
-                await Technique.update({has_count: true}, {where: {technique_id: t}})
+                const techniqueCount = await Technique.count({ where: {technique_id: t} })
+                if(techniqueCount > 0) {
+                    await Count.create({
+                        tactic_name_id: value.name,
+                        technique_name_id: t,
+                        sub_technique_name_id: subtechnique,
+                        count: v.count
+                    })
+                }
             })
         })
 
@@ -366,6 +371,5 @@ populate.count = async (req, res) => {
         util.sendResponse(res, jsonRes); 
     }
 };
-
 
 module.exports = populate;
