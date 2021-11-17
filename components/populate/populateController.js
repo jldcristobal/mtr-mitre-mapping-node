@@ -339,11 +339,14 @@ populate.count = async (req, res) => {
                     subtechnique = technique
 
                     await Subtechnique.update({has_count: true}, {where: {sub_technique_id: subtechnique}})
+                    
+                    const subtechniqueCount = await Subtechnique.count({ where: {sub_technique_id: subtechnique} })
+                    if(subtechniqueCount == 0) subtechnique = null
                 } else {
                     t = technique
-                    await Technique.update({has_count: true}, {where: {technique_id: t}})
                 }
-
+                
+                await Technique.update({has_count: true}, {where: {technique_id: t}})
                 const techniqueCount = await Technique.count({ where: {technique_id: t} })
                 if(techniqueCount > 0) {
                     await Count.create({
