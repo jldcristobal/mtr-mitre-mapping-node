@@ -360,7 +360,7 @@ paths:
                     example: true
                   message:
                     type: string
-                    example: 'Successfully added detections',
+                    example: 'Successfully added detections'
                   result:
                     type: object
                     example: [

@@ -383,12 +383,12 @@ populate.detections = async (req, res) => {
     try {
         const body = req.body.techniques;
         let result = []
-        let technique
-        let subtechnique
-
+        
         // ADD TO DETECTIONS
         await body.forEach(async (techniques) => {
             if(techniques.techniqueID && techniques.techniqueID !== "") {
+                let technique
+                let subtechnique
                 // if techniqueID is a subtechnique
                 if(techniques.techniqueID.includes('.')) {
                     subtechnique = techniques.techniqueID
