@@ -314,6 +314,63 @@ paths:
                         }
                       ]
 
+  "/api/populate/detections":
+    post:
+      tags:
+      - Populate
+      operationId: populateDetections
+      summary: Add data in matrix_detections table 
+      description: Data for populating table found in detections.json file
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                techniques: 
+                  type: object
+                  example: [
+                    {
+                      "color": "rgb(224,243,176)", 
+                      "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_16</li><li>Evade_15a</li><li>Evade_8a - Suspicious High Rep process (launched by a Low Rep) creating remote thread into running High Rep process</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5592\">LDP-5592</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5591\">LDP-5591</a></li></ul></p>", 
+                      "techniqueID": "T1055.002", 
+                      "metadata": {
+                        "detections": [
+                            "dr_evade_16", 
+                            "Evade_15a", 
+                            "Evade_8a"
+                        ]
+                      }
+                    }
+                  ]
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: 'Successfully added detections',
+                  result:
+                    type: object
+                    example: [
+                        {
+                          detections: "dr_evade_16",
+                          technique: "T1055",
+                          subtechnique: "T1055.002"
+                        }
+                      ]
+
 definitions:
 
 ErrorResponse:

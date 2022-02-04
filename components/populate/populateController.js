@@ -20,6 +20,7 @@ const SubtechniqueDataSource = require('./models/subtechniqueDataSource');
 const Query = require('./models/query')
 const QueryPlatform = require('./models/queryPlatform');
 const Count = require('./models/count')
+const Detections = require('./models/detections')
 
 // const logger = log4js.getLogger('controllers - accessToken');
 // logger.level = config.logLevel;
@@ -362,6 +363,69 @@ populate.count = async (req, res) => {
         jsonRes = {
             statusCode: 200,
             success: true,
+            result
+        }
+    } catch(error) {
+        jsonRes = {
+            statusCode: 500,
+            success: false,
+            error: error,
+        };
+    } finally {
+        util.sendResponse(res, jsonRes); 
+    }
+};
+
+populate.detections = async (req, res) => {
+    // logger.debug('inside detections()...');
+    let jsonRes;
+
+    try {
+        const body = req.body.techniques;
+        let result = []
+        let technique
+        let subtechnique
+
+        // ADD TO DETECTIONS
+        await body.forEach(async (techniques) => {
+            if(techniques.techniqueID && techniques.techniqueID !== "") {
+                // if techniqueID is a subtechnique
+                if(techniques.techniqueID.includes('.')) {
+                    subtechnique = techniques.techniqueID
+                    technique = techniques.techniqueID.split('.')[0]
+                } else {
+                    technique = techniques.techniqueID
+                }
+
+                if(techniques.metadata.detections && techniques.metadata.detections != []) {
+                    let detections = techniques.metadata.detections
+                    detections.forEach(async (detection) => {
+                        await Detections.create({
+                            detections: detection,
+                            sub_technique_name_id: subtechnique,
+                            technique_name_id: technique
+                        }).then(async () => {
+                            await result.push({
+                                detections: detection,
+                                sub_technique_name_id: subtechnique,
+                                technique_name_id: technique
+                            })
+                        }).catch((err) => {
+                            jsonRes = {
+                                statusCode: 500,
+                                success: false,
+                                error: err,
+                            };
+                        })
+                    })
+                }
+            }
+        })
+
+        jsonRes = {
+            statusCode: 200,
+            success: true,
+            message: 'Successfully added detections',
             result
         }
     } catch(error) {

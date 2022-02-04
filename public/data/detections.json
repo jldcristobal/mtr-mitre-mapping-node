@@ -1,0 +1,1823 @@
+{
+    "domain": "enterprise-attack", 
+    "techniques": [
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8155\">LGD-8155</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-8154\">LGD-8154</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-8085\">LGD-8085</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7899\">LGD-7899</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7897\">LGD-7897</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7896\">LGD-7896</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7895\">LGD-7895</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7894\">LGD-7894</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7893\">LGD-7893</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7892\">LGD-7892</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7891\">LGD-7891</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7890\">LGD-7890</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5697\">LDP-5697</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5686\">LDP-5686</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5651\">LDP-5651</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5337\">LDP-5337</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5336\">LDP-5336</a></li></ul></p>", 
+            "techniqueID": "", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_16</li><li>Evade_15a</li><li>Evade_8a - Suspicious High Rep process (launched by a Low Rep) creating remote thread into running High Rep process</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5592\">LDP-5592</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5591\">LDP-5591</a></li></ul></p>", 
+            "techniqueID": "T1055.002", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_16", 
+                    "Evade_15a", 
+                    "Evade_8a"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_19</li><li>Gene_TTPinjct_A</li><li>TTP_1055_A</li><li>TTP_1055_B</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5481\">LDP-5481</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5480\">LDP-5480</a></li></ul></p>", 
+            "techniqueID": "T1055.001", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_19", 
+                    "Gene_TTPinjct_A", 
+                    "TTP_1055_A", 
+                    "TTP_1055_B"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1090_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5483\">LDP-5483</a></li></ul></p>", 
+            "techniqueID": "T1090", 
+            "metadata": {
+                "detections": [
+                    "TTP_1090_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1098_A</li><li>TTP_1098_B</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5385\">LDP-5385</a></li></ul></p>", 
+            "techniqueID": "T1098", 
+            "metadata": {
+                "detections": [
+                    "TTP_1098_A", 
+                    "TTP_1098_B"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_8</li><li>Gene_TTPvirus_A</li><li>TTP_1518_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5510\">LDP-5510</a></li></ul></p>", 
+            "techniqueID": "T1518.001", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_8", 
+                    "Gene_TTPvirus_A", 
+                    "TTP_1518_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5829\">LDP-5829</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5524\">LDP-5524</a></li></ul></p>", 
+            "techniqueID": "T1552.004", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_11</li><li>TTP_1201_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5587\">LDP-5587</a></li></ul></p>", 
+            "techniqueID": "T1201", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_11", 
+                    "TTP_1201_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(133,202,93)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exec_3</li><li>Exec_11a</li><li>Exec_12a</li><li>Exec_12b</li><li>Exec_16a</li><li>Exec_17a</li><li>Exec_21a</li><li>Exec_27a</li><li>Exec_28a</li><li>Exec_30a</li><li>Exec_6a - Suspicious Powershell downloading behaviour</li><li>Gene_TTPAMSI_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8030\">LGD-8030</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5405\">LDP-5405</a></li></ul></p>", 
+            "techniqueID": "T1059.001", 
+            "metadata": {
+                "detections": [
+                    "dr_exec_3", 
+                    "Exec_11a", 
+                    "Exec_12a", 
+                    "Exec_12b", 
+                    "Exec_16a", 
+                    "Exec_17a", 
+                    "Exec_21a", 
+                    "Exec_27a", 
+                    "Exec_28a", 
+                    "Exec_30a", 
+                    "Exec_6a", 
+                    "Gene_TTPAMSI_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5529\">LDP-5529</a></li></ul></p>", 
+            "techniqueID": "T1204", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_creds_2 - Unsecured Credentials: Credentials In Files</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5522\">LDP-5522</a></li></ul></p>", 
+            "techniqueID": "T1552.001", 
+            "metadata": {
+                "detections": [
+                    "dr_creds_2"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_creds_3 - Unsecured Credentials: Credentials In Registry</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5601\">LDP-5601</a></li></ul></p>", 
+            "techniqueID": "T1552.002", 
+            "metadata": {
+                "detections": [
+                    "dr_creds_3"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5523\">LDP-5523</a></li></ul></p>", 
+            "techniqueID": "T1552.003", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_4 - Remote System Discovery</li><li>Discovery_2b - Burst of recon process activity indicative of malicious activity (e.g. IcedId, Cobalt, hands-on attack)</li><li>TTP_1018_A</li><li>TTP_AdFind_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8060\">LGD-8060</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5489\">LDP-5489</a></li></ul></p>", 
+            "techniqueID": "T1018", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_4", 
+                    "Discovery_2b", 
+                    "TTP_1018_A", 
+                    "TTP_AdFind_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1012_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5595\">LDP-5595</a></li></ul></p>", 
+            "techniqueID": "T1012", 
+            "metadata": {
+                "detections": [
+                    "TTP_1012_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5515\">LDP-5515</a></li></ul></p>", 
+            "techniqueID": "T1016", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5416\">LDP-5416</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5415\">LDP-5415</a></li></ul></p>", 
+            "techniqueID": "T1543.002", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1484_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5434\">LDP-5434</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5433\">LDP-5433</a></li></ul></p>", 
+            "techniqueID": "T1484.001", 
+            "metadata": {
+                "detections": [
+                    "TTP_1484_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5430\">LDP-5430</a></li></ul></p>", 
+            "techniqueID": "T1561", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_collect_1</li><li>Gene_TTParchv_A</li><li>TTP_1560_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8062\">LGD-8062</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-8054\">LGD-8054</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5389\">LDP-5389</a></li></ul></p>", 
+            "techniqueID": "T1560", 
+            "metadata": {
+                "detections": [
+                    "dr_collect_1", 
+                    "Gene_TTParchv_A", 
+                    "TTP_1560_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5447\">LDP-5447</a></li></ul></p>", 
+            "techniqueID": "T1562", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5518\">LDP-5518</a></li></ul></p>", 
+            "techniqueID": "T1569", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1134_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5378\">LDP-5378</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5377\">LDP-5377</a></li></ul></p>", 
+            "techniqueID": "T1134", 
+            "metadata": {
+                "detections": [
+                    "TTP_1134_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_10</li><li>TTP_1082_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5514\">LDP-5514</a></li></ul></p>", 
+            "techniqueID": "T1082", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_10", 
+                    "TTP_1082_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_13</li><li>TTP_1069_B</li><li>TTP_1069_D</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5589\">LDP-5589</a></li></ul></p>", 
+            "techniqueID": "T1069.002", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_13", 
+                    "TTP_1069_B", 
+                    "TTP_1069_D"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_12</li><li>TTP_1069_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5590\">LDP-5590</a></li></ul></p>", 
+            "techniqueID": "T1069.001", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_12", 
+                    "TTP_1069_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5381\">LDP-5381</a></li></ul></p>", 
+            "techniqueID": "T1087", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5473\">LDP-5473</a></li></ul></p>", 
+            "techniqueID": "T1003.008", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1550_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5528\">LDP-5528</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5527\">LDP-5527</a></li></ul></p>", 
+            "techniqueID": "T1550.002", 
+            "metadata": {
+                "detections": [
+                    "TTP_1550_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5498\">LDP-5498</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5497\">LDP-5497</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5496\">LDP-5496</a></li></ul></p>", 
+            "techniqueID": "T1053.004", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_persist_8 - Scheduled task creation</li><li>Persist_6b - Scheduled task added for TASK XML  (via low rep or in susp context)</li><li>Gene_TTPschta_A</li><li>Gene_TTPschta_B</li><li>TTP_1053_A</li><li>TTP_1053_C</li><li>TTP_T1053_B</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5495\">LDP-5495</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5494\">LDP-5494</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5493\">LDP-5493</a></li></ul></p>", 
+            "techniqueID": "T1053.005", 
+            "metadata": {
+                "detections": [
+                    "dr_persist_8", 
+                    "Persist_6b", 
+                    "Gene_TTPschta_A", 
+                    "Gene_TTPschta_B", 
+                    "TTP_1053_A", 
+                    "TTP_1053_C", 
+                    "TTP_T1053_B"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5439\">LDP-5439</a></li></ul></p>", 
+            "techniqueID": "T1008", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1120_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5476\">LDP-5476</a></li></ul></p>", 
+            "techniqueID": "T1120", 
+            "metadata": {
+                "detections": [
+                    "TTP_1120_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5501\">LDP-5501</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5500\">LDP-5500</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5499\">LDP-5499</a></li></ul></p>", 
+            "techniqueID": "T1053.003", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5470\">LDP-5470</a></li></ul></p>", 
+            "techniqueID": "T1003", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_9</li><li>TTP_1007_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5599\">LDP-5599</a></li></ul></p>", 
+            "techniqueID": "T1007", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_9", 
+                    "TTP_1007_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exfil_1</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5560\">LDP-5560</a></li></ul></p>", 
+            "techniqueID": "T1048.003", 
+            "metadata": {
+                "detections": [
+                    "dr_exfil_1"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5443\">LDP-5443</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5442\">LDP-5442</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5441\">LDP-5441</a></li></ul></p>", 
+            "techniqueID": "T1574", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1027_002</li><li>TTP_dnObfus_B</li><li>TTP_Packed_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8052\">LGD-8052</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-8051\">LGD-8051</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-8050\">LGD-8050</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-7898\">LGD-7898</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5670\">LDP-5670</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5669\">LDP-5669</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5584\">LDP-5584</a></li></ul></p>", 
+            "techniqueID": "T1027.002", 
+            "metadata": {
+                "detections": [
+                    "TTP_1027_002", 
+                    "TTP_dnObfus_B", 
+                    "TTP_Packed_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5585\">LDP-5585</a></li></ul></p>", 
+            "techniqueID": "T1027.005", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5436\">LDP-5436</a></li></ul></p>", 
+            "techniqueID": "T1573", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_lateral_2 - Remote Services: SMB/Windows Admin Shares</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8061\">LGD-8061</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5458\">LDP-5458</a></li></ul></p>", 
+            "techniqueID": "T1570", 
+            "metadata": {
+                "detections": [
+                    "dr_lateral_2"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_c2_4</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5469\">LDP-5469</a></li></ul></p>", 
+            "techniqueID": "T1571", 
+            "metadata": {
+                "detections": [
+                    "dr_c2_4"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5401\">LDP-5401</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5400\">LDP-5400</a></li></ul></p>", 
+            "techniqueID": "T1037", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_22</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5460\">LDP-5460</a></li></ul></p>", 
+            "techniqueID": "T1036", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_22"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_5 - Modify file and directory permissions</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5562\">LDP-5562</a></li></ul></p>", 
+            "techniqueID": "T1222.001", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_5"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_6 - System Owner/User Discovery</li><li>TTP_1033_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5517\">LDP-5517</a></li></ul></p>", 
+            "techniqueID": "T1033", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_6", 
+                    "TTP_1033_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_persist_3 - New service persistence</li><li>Persist_17a</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5418\">LDP-5418</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5417\">LDP-5417</a></li></ul></p>", 
+            "techniqueID": "T1543.003", 
+            "metadata": {
+                "detections": [
+                    "dr_persist_3", 
+                    "Persist_17a"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1005_A</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5428\">LDP-5428</a></li></ul></p>", 
+            "techniqueID": "T1005", 
+            "metadata": {
+                "detections": [
+                    "TTP_1005_A", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5427\">LDP-5427</a></li></ul></p>", 
+            "techniqueID": "T1074.001", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5555\">LDP-5555</a></li></ul></p>", 
+            "techniqueID": "T1555.005", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>Gene_TTPshare_A</li><li>Gene_TTPshare_B</li><li>TTP_1135_A</li><li>TTP_1135_B</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5466\">LDP-5466</a></li></ul></p>", 
+            "techniqueID": "T1135", 
+            "metadata": {
+                "detections": [
+                    "Gene_TTPshare_A", 
+                    "Gene_TTPshare_B", 
+                    "TTP_1135_A", 
+                    "TTP_1135_B"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5423\">LDP-5423</a></li></ul></p>", 
+            "techniqueID": "T1132", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5369\">LDP-5369</a></li></ul></p>", 
+            "techniqueID": "T1133", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_c2_5</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8055\">LGD-8055</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5666\">LDP-5666</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5368\">LDP-5368</a></li></ul></p>", 
+            "techniqueID": "T1573.002", 
+            "metadata": {
+                "detections": [
+                    "dr_c2_5"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exec_5</li><li>dr_exec_6</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8033\">LGD-8033</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5409\">LDP-5409</a></li></ul></p>", 
+            "techniqueID": "T1059.006", 
+            "metadata": {
+                "detections": [
+                    "dr_exec_5", 
+                    "dr_exec_6"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exec_6</li><li>Gene_TTPAMSI_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8034\">LGD-8034</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5554\">LDP-5554</a></li></ul></p>", 
+            "techniqueID": "T1059.007", 
+            "metadata": {
+                "detections": [
+                    "dr_exec_6", 
+                    "Gene_TTPAMSI_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5553\">LDP-5553</a></li></ul></p>", 
+            "techniqueID": "T1110.004", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exec_7</li><li>Gene_TTPAMSI_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8032\">LGD-8032</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5408\">LDP-5408</a></li></ul></p>", 
+            "techniqueID": "T1059.005", 
+            "metadata": {
+                "detections": [
+                    "dr_exec_7", 
+                    "Gene_TTPAMSI_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>Gene_TTPkeylg_A</li><li>TTP_1056_A</li><li>TTP_1056_B</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5668\">LDP-5668</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5457\">LDP-5457</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5456\">LDP-5456</a></li></ul></p>", 
+            "techniqueID": "T1056.001", 
+            "metadata": {
+                "detections": [
+                    "Gene_TTPkeylg_A", 
+                    "TTP_1056_A", 
+                    "TTP_1056_B"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exec_4</li><li>Exec_1a - Suspicious cmd.exe command-line (obfuscated with carets)</li><li>Exec_1c - Suspicious cmd.exe command-line (envvar char obfuscation)</li><li>Exec_1d - Suspicious cmd.exe command-line (set obfuscation)</li><li>Exec_1e - Suspicious cmd.exe command-line (set/findstr to hide process name)</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8031\">LGD-8031</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5406\">LDP-5406</a></li></ul></p>", 
+            "techniqueID": "T1059.003", 
+            "metadata": {
+                "detections": [
+                    "dr_exec_4", 
+                    "Exec_1a", 
+                    "Exec_1c", 
+                    "Exec_1d", 
+                    "Exec_1e"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1110_001</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5552\">LDP-5552</a></li></ul></p>", 
+            "techniqueID": "T1110.001", 
+            "metadata": {
+                "detections": [
+                    "TTP_1110_001", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5414\">LDP-5414</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5413\">LDP-5413</a></li></ul></p>", 
+            "techniqueID": "T1543", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5391\">LDP-5391</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5390\">LDP-5390</a></li></ul></p>", 
+            "techniqueID": "T1547", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1572_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5482\">LDP-5482</a></li></ul></p>", 
+            "techniqueID": "T1572", 
+            "metadata": {
+                "detections": [
+                    "TTP_1572_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5372\">LDP-5372</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5371\">LDP-5371</a></li></ul></p>", 
+            "techniqueID": "T1548", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_c2_2</li><li>C2_10a</li><li>C2_11a</li><li>C2_14a</li><li>C2_15a</li><li>TTP_1071_001</li><li>TTP_1071_A</li><li>TTP_1071_B</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5692\">LDP-5692</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5388\">LDP-5388</a></li></ul></p>", 
+            "techniqueID": "T1071.001", 
+            "metadata": {
+                "detections": [
+                    "dr_c2_2", 
+                    "C2_10a", 
+                    "C2_11a", 
+                    "C2_14a", 
+                    "C2_15a", 
+                    "TTP_1071_001", 
+                    "TTP_1071_A", 
+                    "TTP_1071_B", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1505_003</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5661\">LDP-5661</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5503\">LDP-5503</a></li></ul></p>", 
+            "techniqueID": "T1505.003", 
+            "metadata": {
+                "detections": [
+                    "TTP_1505_003", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_7 - Process Discovery</li><li>Gene_TTPprocd_A</li><li>Gene_TTPprocd_B</li><li>TTP_1057_A</li><li>TTP_1057_B</li><li>TTP_1057_C</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5477\">LDP-5477</a></li></ul></p>", 
+            "techniqueID": "T1057", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_7", 
+                    "Gene_TTPprocd_A", 
+                    "Gene_TTPprocd_B", 
+                    "TTP_1057_A", 
+                    "TTP_1057_B", 
+                    "TTP_1057_C"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_17</li><li>Evade_16a</li><li>Evade_1a - Process with low rep or suspicious context setting IFEO debugger key related to security product</li><li>Evade_20a</li><li>Evade_31a</li><li>Gene_TTPdisbl_A</li><li>TTP_1562_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5689\">LDP-5689</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5370\">LDP-5370</a></li></ul></p>", 
+            "techniqueID": "T1562.001", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_17", 
+                    "Evade_16a", 
+                    "Evade_1a", 
+                    "Evade_20a", 
+                    "Evade_31a", 
+                    "Gene_TTPdisbl_A", 
+                    "TTP_1562_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5485\">LDP-5485</a></li></ul></p>", 
+            "techniqueID": "T1021", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_27</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5828\">LDP-5828</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5575\">LDP-5575</a></li></ul></p>", 
+            "techniqueID": "T1562.002", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_27"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(133,202,93)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_impact_6</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5665\">LDP-5665</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5602\">LDP-5602</a></li></ul></p>", 
+            "techniqueID": "T1561.002", 
+            "metadata": {
+                "detections": [
+                    "dr_impact_6"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1027_A</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8063\">LGD-8063</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5475\">LDP-5475</a></li></ul></p>", 
+            "techniqueID": "T1027", 
+            "metadata": {
+                "detections": [
+                    "TTP_1027_A", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5579\">LDP-5579</a></li></ul></p>", 
+            "techniqueID": "T1185", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1102_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5544\">LDP-5544</a></li></ul></p>", 
+            "techniqueID": "T1102", 
+            "metadata": {
+                "detections": [
+                    "TTP_1102_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1106_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5706\">LDP-5706</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5464\">LDP-5464</a></li></ul></p>", 
+            "techniqueID": "T1106", 
+            "metadata": {
+                "detections": [
+                    "TTP_1106_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_c2_1</li><li>TTP_1105_A</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5452\">LDP-5452</a></li></ul></p>", 
+            "techniqueID": "T1105", 
+            "metadata": {
+                "detections": [
+                    "dr_c2_1", 
+                    "TTP_1105_A", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_creds_6</li><li>TTP_1003_004</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5474\">LDP-5474</a></li></ul></p>", 
+            "techniqueID": "T1003.004", 
+            "metadata": {
+                "detections": [
+                    "dr_creds_6", 
+                    "TTP_1003_004"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5583\">LDP-5583</a></li></ul></p>", 
+            "techniqueID": "T1003.003", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5576\">LDP-5576</a></li></ul></p>", 
+            "techniqueID": "T1559", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(133,202,93)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_creds_4 - OS Credential Dumping: LSASS Memory</li><li>dr_creds_5 - OS Credential Dumping: LSASS Memory</li><li>TTP_1003_001</li><li>TTP_1003_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5471\">LDP-5471</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5365\">LDP-5365</a></li></ul></p>", 
+            "techniqueID": "T1003.001", 
+            "metadata": {
+                "detections": [
+                    "dr_creds_4", 
+                    "dr_creds_5", 
+                    "TTP_1003_001", 
+                    "TTP_1003_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5410\">LDP-5410</a></li></ul></p>", 
+            "techniqueID": "T1554", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5419\">LDP-5419</a></li></ul></p>", 
+            "techniqueID": "T1555", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5580\">LDP-5580</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5459\">LDP-5459</a></li></ul></p>", 
+            "techniqueID": "T1557", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5526\">LDP-5526</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5525\">LDP-5525</a></li></ul></p>", 
+            "techniqueID": "T1550", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5521\">LDP-5521</a></li></ul></p>", 
+            "techniqueID": "T1552", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5530\">LDP-5530</a></li></ul></p>", 
+            "techniqueID": "T1204.001", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1197_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5548\">LDP-5548</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5547\">LDP-5547</a></li></ul></p>", 
+            "techniqueID": "T1197", 
+            "metadata": {
+                "detections": [
+                    "TTP_1197_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1219_A</li><li>TTP_TeamView_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8049\">LGD-8049</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5484\">LDP-5484</a></li></ul></p>", 
+            "techniqueID": "T1219", 
+            "metadata": {
+                "detections": [
+                    "TTP_1219_A", 
+                    "TTP_TeamView_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_3 - Clear Windows event logs</li><li>Gene_TTPevlog_A</li><li>Gene_TTPevlog_B</li><li>TTP_1070_A</li><li>TTP_1070_B</li><li>TTP_1070_D</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5449\">LDP-5449</a></li></ul></p>", 
+            "techniqueID": "T1070.001", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_3", 
+                    "Gene_TTPevlog_A", 
+                    "Gene_TTPevlog_B", 
+                    "TTP_1070_A", 
+                    "TTP_1070_B", 
+                    "TTP_1070_D"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5540\">LDP-5540</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5539\">LDP-5539</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5538\">LDP-5538</a></li></ul></p>", 
+            "techniqueID": "T1078.002", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5450\">LDP-5450</a></li></ul></p>", 
+            "techniqueID": "T1070.002", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-7952\">LGD-7952</a></li></ul></p>", 
+            "techniqueID": "T1566.001", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5479\">LDP-5479</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5478\">LDP-5478</a></li></ul></p>", 
+            "techniqueID": "T1055", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_3 - Account Discovery: Domain Account</li><li>TTP_1087_C</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5691\">LDP-5691</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5383\">LDP-5383</a></li></ul></p>", 
+            "techniqueID": "T1087.002", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_3", 
+                    "TTP_1087_C"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_2 - Account Discovery: Local Account</li><li>Gene_TTPusr_A</li><li>Gene_TTPusr_B</li><li>TTP_1087_001</li><li>TTP_1087_A</li><li>TTP_1087_B</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5690\">LDP-5690</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5382\">LDP-5382</a></li></ul></p>", 
+            "techniqueID": "T1087.001", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_2", 
+                    "Gene_TTPusr_A", 
+                    "Gene_TTPusr_B", 
+                    "TTP_1087_001", 
+                    "TTP_1087_A", 
+                    "TTP_1087_B", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5455\">LDP-5455</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5454\">LDP-5454</a></li></ul></p>", 
+            "techniqueID": "T1056", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8070\">LGD-8070</a></li></ul></p>", 
+            "techniqueID": "T1132.002", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5492\">LDP-5492</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5491\">LDP-5491</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5490\">LDP-5490</a></li></ul></p>", 
+            "techniqueID": "T1053", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>Gene_TTPencod_A</li><li>Gene_TTPencod_B</li><li>TTP_1132_A</li><li>TTP_1132_B</li><li>TTP_1132_C</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5424\">LDP-5424</a></li></ul></p>", 
+            "techniqueID": "T1132.001", 
+            "metadata": {
+                "detections": [
+                    "Gene_TTPencod_A", 
+                    "Gene_TTPencod_B", 
+                    "TTP_1132_A", 
+                    "TTP_1132_B", 
+                    "TTP_1132_C"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5435\">LDP-5435</a></li></ul></p>", 
+            "techniqueID": "T1114", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1070_004</li><li>TTP_1070_C</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5451\">LDP-5451</a></li></ul></p>", 
+            "techniqueID": "T1070.004", 
+            "metadata": {
+                "detections": [
+                    "TTP_1070_004", 
+                    "TTP_1070_C", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_priv_3</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5376\">LDP-5376</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5375\">LDP-5375</a></li></ul></p>", 
+            "techniqueID": "T1548.002", 
+            "metadata": {
+                "detections": [
+                    "dr_priv_3"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5551\">LDP-5551</a></li></ul></p>", 
+            "techniqueID": "T1110", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5463\">LDP-5463</a></li></ul></p>", 
+            "techniqueID": "T1112", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_collect_3</li><li>Gene_TTPprtsr_A</li><li>TTP_1113_A</li><li>TTP_1113_B</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5502\">LDP-5502</a></li></ul></p>", 
+            "techniqueID": "T1113", 
+            "metadata": {
+                "detections": [
+                    "dr_collect_3", 
+                    "Gene_TTPprtsr_A", 
+                    "TTP_1113_A", 
+                    "TTP_1113_B"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_impact_3 - System shutdown/reboot</li><li>TTP_1529_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5520\">LDP-5520</a></li></ul></p>", 
+            "techniqueID": "T1529", 
+            "metadata": {
+                "detections": [
+                    "dr_impact_3", 
+                    "TTP_1529_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5432\">LDP-5432</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5431\">LDP-5431</a></li></ul></p>", 
+            "techniqueID": "T1484", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5422\">LDP-5422</a></li></ul></p>", 
+            "techniqueID": "T1485", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_1 - Domain Trust Discovery</li><li>TTP_1482_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8059\">LGD-8059</a></li><li><a href=\"https://jira.sophos.net/browse/LGD-8053\">LGD-8053</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5556\">LDP-5556</a></li></ul></p>", 
+            "techniqueID": "T1482", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_1", 
+                    "TTP_1482_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5504\">LDP-5504</a></li></ul></p>", 
+            "techniqueID": "T1489", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_impact_1 - Using BcdEdit to disable Windows recovery features</li><li>dr_impact_2 - Inhibit system recovery by shadow copy deletion</li><li>Gene_TTPshadw_A</li><li>TTP_1490_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5453\">LDP-5453</a></li></ul></p>", 
+            "techniqueID": "T1490", 
+            "metadata": {
+                "detections": [
+                    "dr_impact_1", 
+                    "dr_impact_2", 
+                    "Gene_TTPshadw_A", 
+                    "TTP_1490_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_collect_2</li><li>TTP_1114_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5557\">LDP-5557</a></li></ul></p>", 
+            "techniqueID": "T1114.001", 
+            "metadata": {
+                "detections": [
+                    "dr_collect_2", 
+                    "TTP_1114_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5545\">LDP-5545</a></li></ul></p>", 
+            "techniqueID": "T1102.002", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5397\">LDP-5397</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5396\">LDP-5396</a></li></ul></p>", 
+            "techniqueID": "T1547.006", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_persist_4 - Winlogon run key persistence</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5550\">LDP-5550</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5549\">LDP-5549</a></li></ul></p>", 
+            "techniqueID": "T1547.004", 
+            "metadata": {
+                "detections": [
+                    "dr_persist_4"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1547_005</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5395\">LDP-5395</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5394\">LDP-5394</a></li></ul></p>", 
+            "techniqueID": "T1547.005", 
+            "metadata": {
+                "detections": [
+                    "TTP_1547_005"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_persist_1 - Startup folder persistence</li><li>dr_persist_10</li><li>dr_persist_2 - Registry run key persistence</li><li>dr_persist_3 - New service persistence</li><li>Persist_12a</li><li>Persist_13a</li><li>Persist_14a</li><li>Persist_9a - Reg utility creating Run key referring to script engine (via script/office context)</li><li>TTP_1547_001</li><li>TTP_1547_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5726\">LDP-5726</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5393\">LDP-5393</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5392\">LDP-5392</a></li></ul></p>", 
+            "techniqueID": "T1547.001", 
+            "metadata": {
+                "detections": [
+                    "dr_persist_1", 
+                    "dr_persist_10", 
+                    "dr_persist_2", 
+                    "dr_persist_3", 
+                    "Persist_12a", 
+                    "Persist_13a", 
+                    "Persist_14a", 
+                    "Persist_9a", 
+                    "TTP_1547_001", 
+                    "TTP_1547_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_25</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5745\">LDP-5745</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5672\">LDP-5672</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5462\">LDP-5462</a></li></ul></p>", 
+            "techniqueID": "T1036.005", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_25"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_24</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5671\">LDP-5671</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5461\">LDP-5461</a></li></ul></p>", 
+            "techniqueID": "T1036.004", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_24"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1059_A</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5404\">LDP-5404</a></li></ul></p>", 
+            "techniqueID": "T1059", 
+            "metadata": {
+                "detections": [
+                    "TTP_1059_A", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5399\">LDP-5399</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5398\">LDP-5398</a></li></ul></p>", 
+            "techniqueID": "T1547.009", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_15</li><li>TTP_1046_A</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5768\">LDP-5768</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5465\">LDP-5465</a></li></ul></p>", 
+            "techniqueID": "T1046", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_15", 
+                    "TTP_1046_A", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exec_2</li><li>Exec_23a</li><li>Gene_TTPAMSI_A</li><li>TTP_1047_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5546\">LDP-5546</a></li></ul></p>", 
+            "techniqueID": "T1047", 
+            "metadata": {
+                "detections": [
+                    "dr_exec_2", 
+                    "Exec_23a", 
+                    "Gene_TTPAMSI_A", 
+                    "TTP_1047_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1040_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5468\">LDP-5468</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5467\">LDP-5467</a></li></ul></p>", 
+            "techniqueID": "T1040", 
+            "metadata": {
+                "detections": [
+                    "TTP_1040_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exfil_2</li><li>TTP_1041_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5438\">LDP-5438</a></li></ul></p>", 
+            "techniqueID": "T1041", 
+            "metadata": {
+                "detections": [
+                    "dr_exfil_2", 
+                    "TTP_1041_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1048_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5559\">LDP-5559</a></li></ul></p>", 
+            "techniqueID": "T1048", 
+            "metadata": {
+                "detections": [
+                    "TTP_1048_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_disc_14</li><li>TTP_1049_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5516\">LDP-5516</a></li></ul></p>", 
+            "techniqueID": "T1049", 
+            "metadata": {
+                "detections": [
+                    "dr_disc_14", 
+                    "TTP_1049_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_26</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5825\">LDP-5825</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5574\">LDP-5574</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5573\">LDP-5573</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5572\">LDP-5572</a></li></ul></p>", 
+            "techniqueID": "T1574.001", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_26"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5558\">LDP-5558</a></li></ul></p>", 
+            "techniqueID": "T1573.001", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5386\">LDP-5386</a></li></ul></p>", 
+            "techniqueID": "T1098.004", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_creds_1 - Credentials from Password Stores: Windows Credential Manager</li><li>Gene_TTPvault_A</li><li>TTP_1555_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5421\">LDP-5421</a></li></ul></p>", 
+            "techniqueID": "T1555.004", 
+            "metadata": {
+                "detections": [
+                    "dr_creds_1", 
+                    "Gene_TTPvault_A", 
+                    "TTP_1555_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5384\">LDP-5384</a></li></ul></p>", 
+            "techniqueID": "T1087.003", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5568\">LDP-5568</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5567\">LDP-5567</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5566\">LDP-5566</a></li></ul></p>", 
+            "techniqueID": "T1574.007", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_28</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5827\">LDP-5827</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5571\">LDP-5571</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5570\">LDP-5570</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5569\">LDP-5569</a></li></ul></p>", 
+            "techniqueID": "T1574.008", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_28"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8056\">LGD-8056</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5826\">LDP-5826</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5565\">LDP-5565</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5564\">LDP-5564</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5563\">LDP-5563</a></li></ul></p>", 
+            "techniqueID": "T1574.009", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5446\">LDP-5446</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5445\">LDP-5445</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5444\">LDP-5444</a></li></ul></p>", 
+            "techniqueID": "T1574.010", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5578\">LDP-5578</a></li></ul></p>", 
+            "techniqueID": "T1534", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_persist_11</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5367\">LDP-5367</a></li></ul></p>", 
+            "techniqueID": "T1136.002", 
+            "metadata": {
+                "detections": [
+                    "dr_persist_11"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_persist_12</li><li>TTP_1136_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5412\">LDP-5412</a></li></ul></p>", 
+            "techniqueID": "T1136.001", 
+            "metadata": {
+                "detections": [
+                    "dr_persist_12", 
+                    "TTP_1136_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5374\">LDP-5374</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5373\">LDP-5373</a></li></ul></p>", 
+            "techniqueID": "T1548.001", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1083_A</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5440\">LDP-5440</a></li></ul></p>", 
+            "techniqueID": "T1083", 
+            "metadata": {
+                "detections": [
+                    "TTP_1083_A", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5600\">LDP-5600</a></li></ul></p>", 
+            "techniqueID": "T1080", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5561\">LDP-5561</a></li></ul></p>", 
+            "techniqueID": "T1222", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8057\">LGD-8057</a></li></ul></p>", 
+            "techniqueID": "T1558.002", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1558_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5597\">LDP-5597</a></li></ul></p>", 
+            "techniqueID": "T1558.003", 
+            "metadata": {
+                "detections": [
+                    "TTP_1558_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5403\">LDP-5403</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5402\">LDP-5402</a></li></ul></p>", 
+            "techniqueID": "T1037.004", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1021_B</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5488\">LDP-5488</a></li></ul></p>", 
+            "techniqueID": "T1021.006", 
+            "metadata": {
+                "detections": [
+                    "TTP_1021_B"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_21</li><li>TTP_1553_002</li><li>TTP_CodeSign_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5598\">LDP-5598</a></li></ul></p>", 
+            "techniqueID": "T1553.002", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_21", 
+                    "TTP_1553_002", 
+                    "TTP_CodeSign_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exec_1 - Using BcdEdit to enable SafeMode upon restart</li><li>Exec_15a</li><li>Exec_31a</li><li>TTP_1569_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8058\">LGD-8058</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5519\">LDP-5519</a></li></ul></p>", 
+            "techniqueID": "T1569.002", 
+            "metadata": {
+                "detections": [
+                    "dr_exec_1", 
+                    "Exec_15a", 
+                    "Exec_31a", 
+                    "TTP_1569_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_lateral_1 - Remote Services: SMB/Windows Admin Shares</li><li>dr_lateral_2 - Remote Services: SMB/Windows Admin Shares</li><li>Lateral_2b - Dll being distributed over the network & launched via WMI</li><li>TTP_1021_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5486\">LDP-5486</a></li></ul></p>", 
+            "techniqueID": "T1021.002", 
+            "metadata": {
+                "detections": [
+                    "dr_lateral_1", 
+                    "dr_lateral_2", 
+                    "Lateral_2b", 
+                    "TTP_1021_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_lateral_3</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5596\">LDP-5596</a></li></ul></p>", 
+            "techniqueID": "T1021.001", 
+            "metadata": {
+                "detections": [
+                    "dr_lateral_3"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5513\">LDP-5513</a></li></ul></p>", 
+            "techniqueID": "T1553.006", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5508\">LDP-5508</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5507\">LDP-5507</a></li></ul></p>", 
+            "techniqueID": "T1072", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_c2_3</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5667\">LDP-5667</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5387\">LDP-5387</a></li></ul></p>", 
+            "techniqueID": "T1071", 
+            "metadata": {
+                "detections": [
+                    "dr_c2_3"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_lateral_4</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5487\">LDP-5487</a></li></ul></p>", 
+            "techniqueID": "T1021.004", 
+            "metadata": {
+                "detections": [
+                    "dr_lateral_4"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5426\">LDP-5426</a></li></ul></p>", 
+            "techniqueID": "T1074", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5534\">LDP-5534</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5533\">LDP-5533</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5532\">LDP-5532</a></li></ul></p>", 
+            "techniqueID": "T1078", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_2 - Script execution via rundll32 (runhtmlapplication technique)</li><li>Evade_18a</li><li>Evade_18b</li><li>Evade_23a</li><li>Evade_25a</li><li>Evade_26b</li><li>Evade_27a</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5740\">LDP-5740</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5506\">LDP-5506</a></li></ul></p>", 
+            "techniqueID": "T1218.011", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_2", 
+                    "Evade_18a", 
+                    "Evade_18b", 
+                    "Evade_23a", 
+                    "Evade_25a", 
+                    "Evade_26b", 
+                    "Evade_27a"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5511\">LDP-5511</a></li></ul></p>", 
+            "techniqueID": "T1558", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_creds_5 - OS Credential Dumping: LSASS Memory</li><li>TTP_1003_002</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5472\">LDP-5472</a></li></ul></p>", 
+            "techniqueID": "T1003.002", 
+            "metadata": {
+                "detections": [
+                    "dr_creds_5", 
+                    "TTP_1003_002"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1136_B</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5411\">LDP-5411</a></li></ul></p>", 
+            "techniqueID": "T1136", 
+            "metadata": {
+                "detections": [
+                    "TTP_1136_B"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_15</li><li>Evade_14a</li><li>Evade_7a - Suspicious process launching and injecting/hollowing high rep process (classic process hollowing)</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5594\">LDP-5594</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5593\">LDP-5593</a></li></ul></p>", 
+            "techniqueID": "T1055.012", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_15", 
+                    "Evade_14a", 
+                    "Evade_7a"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1557_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5582\">LDP-5582</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5581\">LDP-5581</a></li></ul></p>", 
+            "techniqueID": "T1557.001", 
+            "metadata": {
+                "detections": [
+                    "TTP_1557_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1134_005</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5380\">LDP-5380</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5379\">LDP-5379</a></li></ul></p>", 
+            "techniqueID": "T1134.005", 
+            "metadata": {
+                "detections": [
+                    "TTP_1134_005"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5663\">LDP-5663</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5662\">LDP-5662</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5603\">LDP-5603</a></li></ul></p>", 
+            "techniqueID": "T1505", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_20</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5448\">LDP-5448</a></li></ul></p>", 
+            "techniqueID": "T1070", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_20"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5537\">LDP-5537</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5536\">LDP-5536</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5535\">LDP-5535</a></li></ul></p>", 
+            "techniqueID": "T1078.001", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5437\">LDP-5437</a></li></ul></p>", 
+            "techniqueID": "T1499", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5543\">LDP-5543</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5542\">LDP-5542</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5541\">LDP-5541</a></li></ul></p>", 
+            "techniqueID": "T1078.003", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(191,228,118)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_evade_6 - Deobfuscate/Decode Files or Information</li><li>TTP_1140_A</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5664\">LDP-5664</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5429\">LDP-5429</a></li></ul></p>", 
+            "techniqueID": "T1140", 
+            "metadata": {
+                "detections": [
+                    "dr_evade_6", 
+                    "TTP_1140_A", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_creds_7</li><li>Creds_2a - Non-browser exe accessing sensitive password storing files for multiple, different browsers</li><li>Creds_2c</li><li>TTP_1555_003</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5420\">LDP-5420</a></li></ul></p>", 
+            "techniqueID": "T1555.003", 
+            "metadata": {
+                "detections": [
+                    "dr_creds_7", 
+                    "Creds_2a", 
+                    "Creds_2c", 
+                    "TTP_1555_003"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1069_C</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5588\">LDP-5588</a></li></ul></p>", 
+            "techniqueID": "T1069", 
+            "metadata": {
+                "detections": [
+                    "TTP_1069_C"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5505\">LDP-5505</a></li></ul></p>", 
+            "techniqueID": "T1218", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1518_B</li><li>TTP_PASWebsh_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LGD-8064\">LGD-8064</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5509\">LDP-5509</a></li></ul></p>", 
+            "techniqueID": "T1518", 
+            "metadata": {
+                "detections": [
+                    "TTP_1518_B", 
+                    "TTP_PASWebsh_A"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_exec_8</li><li>Exec_25a</li><li>Exec_26b</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5531\">LDP-5531</a></li></ul></p>", 
+            "techniqueID": "T1204.002", 
+            "metadata": {
+                "detections": [
+                    "dr_exec_8", 
+                    "Exec_25a", 
+                    "Exec_26b"
+                ]
+            }
+        }, 
+        {
+            "color": "rgb(224,243,176)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>TTP_1559_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5577\">LDP-5577</a></li></ul></p>", 
+            "techniqueID": "T1559.001", 
+            "metadata": {
+                "detections": [
+                    "TTP_1559_A"
+                ]
+            }
+        }, 
+        {
+            "color": "", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5512\">LDP-5512</a></li></ul></p>", 
+            "techniqueID": "T1553", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(252,169,133)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3>&nbsp;<em>None listed</em></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5407\">LDP-5407</a></li></ul></p>", 
+            "techniqueID": "T1059.004", 
+            "metadata": {
+                "detections": []
+            }
+        }, 
+        {
+            "color": "rgb(133,202,93)", 
+            "comment": "<p><h3>LABS DETECTIONS:</h3><ul><li>dr_impact_5</li><li>Impact_4a - Type:1 - suspicious process renaming an existing file i.e. probably ransomware</li><li>Impact_5a - Type:2 - suspicious process renaming an existing file i.e. probably ransomware</li><li>Impact_6a - Ransomware deletes backup and tries to encrypt user files</li><li>Impact_7a - suspicious process (dropped via network) renames an existing file i.e. probably ransomware</li><li>TTP_1486_A</li></ul></p><p><h3>JIRA Tickets:</h3><ul><li><a href=\"https://jira.sophos.net/browse/LDP-5425\">LDP-5425</a></li><li><a href=\"https://jira.sophos.net/browse/LDP-5211\">LDP-5211</a></li></ul></p>", 
+            "techniqueID": "T1486", 
+            "metadata": {
+                "detections": [
+                    "dr_impact_5", 
+                    "Impact_4a", 
+                    "Impact_5a", 
+                    "Impact_6a", 
+                    "Impact_7a", 
+                    "TTP_1486_A"
+                ]
+            }
+        }
+    ], 
+    "description": "MITRE Evaluations 2021, Labs Coverage Assessment", 
+    "name": "MITRE Eval 2021, Labs Coverage"
+}

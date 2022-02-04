@@ -22,5 +22,6 @@ router.post('/tactic', populateCtrl.tactic)
 router.post('/technique', populateCtrl.technique)
 router.post('/query', populateCtrl.query)
 router.post('/count', populateCtrl.count)
+router.post('/detections', populateCtrl.detections)
 
 module.exports = router
